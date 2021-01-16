@@ -1,0 +1,298 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', 
+        sans-serif;
+
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    background-color:rgb(37, 37, 38);
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    width: 100%;
+    padding-top: 30px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 30px;
+    text-transform: uppercase;
+    display: inline-block;
+    vertical-align: right;
+    position: relative;
+
+    color: #fff;
+    text-decoration: none;
+
+    transition: color .1s linear;
+}
+
+.img_logo {
+    text-align: center;
+}
+
+/* Nav */
+.nav {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.nav__link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 20px;
+    position: relative;
+
+    color: #fff;
+    text-decoration: none;
+
+    transition: color .1s linear;
+    
+}
+
+.nav__link:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+
+    background-color: #fce38a;
+    opacity: 0;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+
+    transition: opacity .1s linear;
+}
+
+.nav__link:hover {
+    color: #fce38a;
+}
+
+.nav__link:hover:after {
+    opacity: 1;
+}
+
+.call {
+    font-size: 20px;
+    text-transform: uppercase;
+    display: inline-block;
+    vertical-align: right;
+    margin: 0 30px;
+
+    position: relative;
+    color: #fff;
+
+    text-decoration: none;
+    transition: color .1s linear;
+}
+
+/* Intro */
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+
+    background: url("../images/delivery.jpg") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.intro__inner {
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.intro__title {
+    color: #fff;
+    font-size: 90px;
+    font-weight: 700;
+
+    line-height: 1;
+    font-family: 'Kaushan Script',
+        cursive;
+
+}
+
+.intro__suptitle {
+    margin-bottom: 20px;
+
+    font-family: 'Kaushan Script',
+        cursive;
+    font-size: 72px;
+    color: #fff;
+}
+
+/* Menu */
+
+.container-menu {
+    height: 100%;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+.mcart {
+    border: 3px solid #fff;
+    width: 100%;
+    height: 70px;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Montserrat',
+        sans-serif;
+    overflow: hidden;
+    letter-spacing: 2px;
+}
+
+/* .goods-out {
+
+} */
+
+.goods-out:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* Cart */
+
+.total
+{
+    color:#fff;
+    font-size: 30px;
+    font-family: 'Montserrat',
+    sans-serif;
+    overflow: hidden;
+    letter-spacing: 2px;
+    padding: 100px;
+}
+
+.imgss
+{
+   width: 128px;
+   height: 128px;
+}
+
+.imgs
+{
+    width: 256px;
+    height: 256px;
+}
+
+.cart {
+    width: 256px;
+    height: 535px;
+    background:#fff;
+    text-align: center;
+    font-size: 30px;
+    margin: 20px;
+    display: inline-block;
+}
+
+.main-cart{
+    height: 535px;
+    padding-left: 100px;
+    
+    color: #fff;
+    float: left;
+    text-align: center; 
+    font-size: 30px;
+}
+
+.name
+{
+    font-size: 24px;
+    height: 40px;
+    font-family: 'Montserrat',
+        sans-serif;
+    overflow: hidden;
+    letter-spacing: 2px;
+}
+
+.descr
+{
+    font-size: 14px;
+    padding: 10px;
+    font-family: 'Montserrat',
+        sans-serif;
+    overflow: hidden;
+    height: 100px;
+    letter-spacing: 2px;
+}
+
+.cost
+{
+    font-size: 14px;
+    padding: 20px;
+    font-family: 'Montserrat',
+        sans-serif;
+    text-transform: uppercase;
+    overflow: hidden;
+    letter-spacing: 2px;
+    height: 70px;
+}
+
+.add-to-cart
+{
+    width: 100%;  
+    height: 55px;
+    text-decoration: none;
+    color: #000;
+  
+    position: relative;
+    border: 1px solid;
+  
+    font-family: 'Montserrat',
+        sans-serif;
+    text-transform: uppercase;
+    overflow: hidden;
+    letter-spacing: 2px;
+}
+
+.add-to-cart:hover {
+    color: #a8cf5e;
+    transform: translateY(-5px);  
+}
