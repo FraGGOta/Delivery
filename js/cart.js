@@ -12,7 +12,7 @@ function loadCart() {
 
 function showMainCart() {
     if (!isEmpty(cart)) {
-            $('.total').html('Итого: ${0} рублей');
+            $('.total').html(`Итого: ${0} рублей`);
             $('.main-cart').html('Корзина пуста');
     }
     else {
@@ -36,7 +36,7 @@ function showMainCart() {
             $('.del-goods').on('click', delGoods);
             $('.plus-goods').on('click', plusGoods);
             $('.minus-goods').on('click', minusGoods);
-            $('.total').html('Итого: ${total} рублей');
+            $('.total').html(`Итого: ${total} рублей`);
         });
     }
 }
