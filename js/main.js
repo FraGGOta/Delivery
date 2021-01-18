@@ -38,7 +38,7 @@ function saveCart() {
 function showCart() {
     var out="";
     for (var key in cart) {
-        out += key + '---' + cart[key] + '; ';
+        out += key + ' --- ' + cart[key] + '; ';
     }
     $('.mcart').html(out);
 }

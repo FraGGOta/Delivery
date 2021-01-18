@@ -77,6 +77,43 @@ function isEmpty(object) {
     return false;
 }
 
+function sendEmail() {
+    var ename = $('#ename').val();
+    var eaddress = $('#eaddress').val();
+    var etelephone = $('#etelephone').val();
+    var eemail = $('#eemail').val();
+
+    if (ename!='' && eaddress!='' && etelephone!='' && eemail !='') {
+        if (isEmpty(cart)) {
+            $.post(
+                "core/mail.php",
+                {
+                    "ename" : ename,
+                    "eaddress" : eaddress,
+                    "etelephone" : etelephone,
+                    "eemail" : eemail,
+                    "cart" : cart
+                },
+                function(data) {
+                    if (data==1) {
+                        alert('Заказ отправлен');
+                    }
+                    else {
+                        alert('Повторите заказ');
+                    }
+                }
+            );
+        }
+        else {
+                alert('Корзина пуста');
+            }
+    }
+    else {
+        alert('Заполните поля');
+    }
+}
+
 $(document).ready(function () {
     loadCart();
-})
+    $('.send-email').on('click', sendEmail);
+});

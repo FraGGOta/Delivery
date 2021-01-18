@@ -296,3 +296,107 @@ h6 {
     color: #a8cf5e;
     transform: translateY(-5px);  
 }
+
+.air {
+    font-size: 20px;
+    max-width: 350px;
+    margin: 50px auto 0;
+    
+    background: rgb(37, 37, 38);
+    
+    color: #fff;
+    font-family: 'Montserrat',
+        sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.inpt{
+    font-family: 'Montserrat',
+        sans-serif;
+    font-size: 16px;
+}
+
+/* Ввод имени */
+
+.form-row input { 
+    font-family: 'Montserrat',
+        sans-serif;
+    font-size: 18px;
+    background: #fff;
+    color: #000;
+
+    display: block;
+    width: 100%;
+    padding: 0;
+    line-height: 30px;
+}
+
+/* Ввод адреса */
+
+.form-row textarea {
+    font-family: 'Montserrat',
+        sans-serif;
+    font-size: 16px;
+    color: #000;
+    width: 100%;
+    line-height: 30px;
+}
+
+.form-row-icon {
+    position: relative;
+    border-bottom: 2px solid #909090;
+}
+
+.form-row-icon input {
+    display: block;
+    width: 100%;
+    padding: 0 10px 0 50px;
+    line-height: 40px;
+    box-sizing: border-box;
+    border-width: 0;
+    background: #ffffff;
+}
+
+.form-row-icon .fa {
+    position: absolute;
+    
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #fff;
+    color: #E4E3DF;
+}
+.form-row-icon .telephone {
+    background: url("../images/telephone.png") center no-repeat;
+}
+
+.form-row-icon .email {
+    background: url("../images/email.png") center no-repeat;
+}
+
+.form-row-icon .send {
+    background: url("../images/send.png") center no-repeat;
+}
+
+.send-email {
+    font-family: 'Montserrat',
+        sans-serif;
+    font-size: 16px;
+    background: #fff;
+    color: #000;
+    width: 100%;
+    line-height: 30px;
+    text-decoration: none;
+    border-width: 0;
+}
+
+.send-email:hover {
+    color: #a8cf5e;
+}
+
+
+
+
+
