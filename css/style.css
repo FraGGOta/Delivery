@@ -2,7 +2,6 @@ body {
     margin: 0;
     font-family: 'Montserrat', 
         sans-serif;
-
     font-size: 15px;
     line-height: 1.6;
     color: #333;
@@ -22,6 +21,7 @@ h4,
 h5,
 h6 {
     margin: 0;
+    text-align: center;
 }
 
 .container {
@@ -30,11 +30,9 @@ h6 {
     margin: 0 auto;
 }
 
-/* Header */
 .header {
     width: 100%;
     padding-top: 30px;
-
     position: absolute;
     top: 0;
     left: 0;
@@ -42,50 +40,41 @@ h6 {
     z-index: 1000;
 }
 
-.header__inner {
+.header-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 50px;
 }
 
-.header__logo {
-    font-family: 'Kaushan Script', cursive;
-    font-size: 30px;
+.time {
+    font-size: 20px;
     text-transform: uppercase;
     display: inline-block;
     vertical-align: right;
+    margin: 0 30px;
     position: relative;
-
     color: #fff;
     text-decoration: none;
-
     transition: color .1s linear;
 }
 
-.img_logo {
-    text-align: center;
-}
-
-/* Nav */
 .nav {
     font-size: 20px;
     text-transform: uppercase;
 }
 
-.nav__link {
+.nav-link {
     display: inline-block;
     vertical-align: top;
     margin: 0 20px;
     position: relative;
-
     color: #fff;
     text-decoration: none;
-
     transition: color .1s linear;
-    
 }
 
-.nav__link:after {
+.nav-link:after {
     content: "";
     display: block;
     width: 100%;
@@ -102,301 +91,10 @@ h6 {
     transition: opacity .1s linear;
 }
 
-.nav__link:hover {
+.nav-link:hover {
     color: #fce38a;
 }
 
-.nav__link:hover:after {
+.nav-link:hover:after {
     opacity: 1;
 }
-
-.call {
-    font-size: 20px;
-    text-transform: uppercase;
-    display: inline-block;
-    vertical-align: right;
-    margin: 0 30px;
-
-    position: relative;
-    color: #fff;
-
-    text-decoration: none;
-    transition: color .1s linear;
-}
-
-/* Intro */
-.intro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-
-    background: url("../images/delivery.jpg") center no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
-}
-
-.intro__inner {
-    width: 100%;
-    max-width: 880px;
-    margin: 0 auto;
-
-    text-align: center;
-}
-
-.intro__title {
-    color: #fff;
-    font-size: 90px;
-    font-weight: 700;
-
-    line-height: 1;
-    font-family: 'Kaushan Script',
-        cursive;
-
-}
-
-.intro__suptitle {
-    margin-bottom: 20px;
-
-    font-family: 'Kaushan Script',
-        cursive;
-    font-size: 72px;
-    color: #fff;
-}
-
-/* Menu */
-
-.container-menu {
-    height: 100%;
-    width: 100%;
-    max-width: 1500px;
-    margin: 0 auto;
-    padding-top: 100px;
-}
-
-.mcart {
-    border: 3px solid #fff;
-    width: 100%;
-    height: 70px;
-    color: #fff;
-    font-size: 14px;
-    font-family: 'Montserrat',
-        sans-serif;
-    overflow: hidden;
-    letter-spacing: 2px;
-}
-
-/* .goods-out {
-
-} */
-
-.goods-out:after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-/* Cart */
-
-.total
-{
-    color:#fff;
-    font-size: 30px;
-    font-family: 'Montserrat',
-    sans-serif;
-    overflow: hidden;
-    letter-spacing: 2px;
-    padding: 100px;
-}
-
-.imgss
-{
-   width: 128px;
-   height: 128px;
-}
-
-.imgs
-{
-    width: 256px;
-    height: 256px;
-}
-
-.cart {
-    width: 256px;
-    height: 535px;
-    background:#fff;
-    text-align: center;
-    font-size: 30px;
-    margin: 20px;
-    display: inline-block;
-}
-
-.main-cart{
-    height: 535px;
-    padding-left: 100px;
-    
-    color: #fff;
-    float: left;
-    text-align: center; 
-    font-size: 30px;
-}
-
-.name
-{
-    font-size: 24px;
-    height: 40px;
-    font-family: 'Montserrat',
-        sans-serif;
-    overflow: hidden;
-    letter-spacing: 2px;
-}
-
-.descr
-{
-    font-size: 14px;
-    padding: 10px;
-    font-family: 'Montserrat',
-        sans-serif;
-    overflow: hidden;
-    height: 100px;
-    letter-spacing: 2px;
-}
-
-.cost
-{
-    font-size: 14px;
-    padding: 20px;
-    font-family: 'Montserrat',
-        sans-serif;
-    text-transform: uppercase;
-    overflow: hidden;
-    letter-spacing: 2px;
-    height: 70px;
-}
-
-.add-to-cart
-{
-    width: 100%;  
-    height: 55px;
-    text-decoration: none;
-    color: #000;
-  
-    position: relative;
-    border: 1px solid;
-  
-    font-family: 'Montserrat',
-        sans-serif;
-    text-transform: uppercase;
-    overflow: hidden;
-    letter-spacing: 2px;
-}
-
-.add-to-cart:hover {
-    color: #a8cf5e;
-    transform: translateY(-5px);  
-}
-
-.air {
-    font-size: 20px;
-    max-width: 350px;
-    margin: 50px auto 0;
-    
-    background: rgb(37, 37, 38);
-    
-    color: #fff;
-    font-family: 'Montserrat',
-        sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.inpt{
-    font-family: 'Montserrat',
-        sans-serif;
-    font-size: 16px;
-}
-
-/* Ввод имени */
-
-.form-row input { 
-    font-family: 'Montserrat',
-        sans-serif;
-    font-size: 18px;
-    background: #fff;
-    color: #000;
-
-    display: block;
-    width: 100%;
-    padding: 0;
-    line-height: 30px;
-}
-
-/* Ввод адреса */
-
-.form-row textarea {
-    font-family: 'Montserrat',
-        sans-serif;
-    font-size: 16px;
-    color: #000;
-    width: 100%;
-    line-height: 30px;
-}
-
-.form-row-icon {
-    position: relative;
-    border-bottom: 2px solid #909090;
-}
-
-.form-row-icon input {
-    display: block;
-    width: 100%;
-    padding: 0 10px 0 50px;
-    line-height: 40px;
-    box-sizing: border-box;
-    border-width: 0;
-    background: #ffffff;
-}
-
-.form-row-icon .fa {
-    position: absolute;
-    
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    background: #fff;
-    color: #E4E3DF;
-}
-.form-row-icon .telephone {
-    background: url("../images/telephone.png") center no-repeat;
-}
-
-.form-row-icon .email {
-    background: url("../images/email.png") center no-repeat;
-}
-
-.form-row-icon .send {
-    background: url("../images/send.png") center no-repeat;
-}
-
-.send-email {
-    font-family: 'Montserrat',
-        sans-serif;
-    font-size: 16px;
-    background: #fff;
-    color: #000;
-    width: 100%;
-    line-height: 30px;
-    text-decoration: none;
-    border-width: 0;
-}
-
-.send-email:hover {
-    color: #a8cf5e;
-}
-
-
-
-
-

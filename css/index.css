@@ -1,0 +1,81 @@
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: url("../images/delivery.jpg") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.intro-title {
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color .1s linear;
+}
+
+.slider {
+    width: 1200px;
+    height: 500px;
+    background:rgb(34, 34, 33); 
+    margin: 0 auto;
+    text-align: center;
+   
+}
+
+.image {
+    line-height: 500px;
+    background:rgb(34, 34, 33);
+    position: absolute;
+    font-size: 20px;
+    width: 100%;
+    color: #fff;
+    display: none;
+}
+
+.image.curry {
+    display: block;
+}
+
+.image:first-child {
+    width: 1200px;
+    text-align: left;
+    padding-left: 6%;
+    background: url("../images/mexica.jpg") right no-repeat;
+}
+
+.image:nth-child(2) {
+    width: 1200px;
+    background: url("../images/bbq.jpg") right no-repeat;
+    text-align: left;
+    padding-left: 4%;
+}
+
+.image:nth-child(3) {
+    width: 1200px;
+    background: url("../images/meat.jpg") right no-repeat;
+    text-align: left;
+    padding-left: 4%;
+}
+
+.previous {
+    font-family: 'Montserrat',
+        sans-serif;
+    font-size: 16px;
+    background: rgb(34, 34, 33);
+    margin-top: 45%;  
+    text-decoration: none;   
+}
+
+.next {
+    font-family: 'Montserrat',
+        sans-serif;
+    font-size: 16px;
+    background: rgb(34, 34, 33);
+    margin-top: 45%;
+    text-decoration: none
+} 
