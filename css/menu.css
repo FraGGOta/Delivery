@@ -3,11 +3,11 @@
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
-    padding-top: 100px;
+    padding-top: 50px; 
 }
 
 .titl {
-    padding: 3%;
+    /* padding: 3%; */
     font-size: 16px;
     font-family: 'Montserrat',
         sans-serif;
@@ -28,13 +28,9 @@
         sans-serif;
     overflow: hidden;
     letter-spacing: 2px;
-    margin-top: 1.5%;
+    margin-top: 1%;
     text-align: center;
 }
-
-/* .goods-out {
-
-} */
 
 .goods-out:after {
     display: block;
@@ -45,7 +41,6 @@
     width: 100%;
     height: 55px;
     text-decoration: none;
-    color: #000;
 
     position: relative;
     border: 1px solid;

@@ -1,19 +1,16 @@
 .welcome {
     width: 100%; 
-    margin-top: 150px;
-    color: rgb(0, 0, 0);
+    margin-top: 50px;
     text-align: center;
 }
 
 .welcome-title {
     font-size: 20px;
-    color: rgb(0, 0, 0);
     text-transform: uppercase;
 }
 
 .title {
     font-size: 25px;
-    color: rgb(0, 0, 0);
     text-transform: uppercase;
     height: 300px;
     width: 350px;
@@ -31,7 +28,6 @@
 
 .window-inner {
     position: relative;
-    background: rgb(0, 0, 0);
 }
 
 .window-cart {
@@ -42,7 +38,6 @@
 .window-text {
     width: 100%;
     font-size: 18px;
-    color: rgb(0, 0, 0);
     opacity: 0;
     position: absolute;
     top: 50%;
