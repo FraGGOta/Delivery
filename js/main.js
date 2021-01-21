@@ -1,15 +1,15 @@
 function slider() {
     $('.next').click(function() {
-		var currentImage = $('.image.curry');
-		var currentImageIndex = $('.image.curry').index();
+		var currentImage = $('.block.curry');
+		var currentImageIndex = $('.block.curry').index();
 		var nextImageIndex = currentImageIndex + 1;
-		var nextImage = $('.image').eq(nextImageIndex);
+		var nextImage = $('.block').eq(nextImageIndex);
 		currentImage.fadeOut(1000);
 		currentImage.removeClass('curry');
 
-		if(nextImageIndex == ($('.image:last').index()+1)) {
-			$('.image').eq(0).fadeIn(1000);
-			$('.image').eq(0).addClass('curry');
+		if(nextImageIndex == ($('.block:last').index()+1)) {
+			$('.block').eq(0).fadeIn(1000);
+			$('.block').eq(0).addClass('curry');
 		} else {
 			nextImage.fadeIn(1000);
 			nextImage.addClass('curry');
@@ -17,10 +17,10 @@ function slider() {
 	});
 
 	$('.previous').click(function() {
-		var currentImage = $('.image.curry');
-		var currentImageIndex = $('.image.curry').index();
+		var currentImage = $('.block.curry');
+		var currentImageIndex = $('.block.curry').index();
 		var prevImageIndex = currentImageIndex - 1;
-		var prevImage = $('.image').eq(prevImageIndex);
+		var prevImage = $('.block').eq(prevImageIndex);
 		currentImage.fadeOut(1000);
 		currentImage.removeClass('curry');
 		prevImage.fadeIn(1000);

@@ -1,9 +1,7 @@
 <?php
-// читать json файл
 $json = file_get_contents('../goods.json');
 $json = json_decode($json, true);
 
-//письмо
 $message = '';
 $message .= '<h1>Заказ в магазине</h1>';
 $message .= '<p>Имя: ' . $_POST['ename'] . '</p>';

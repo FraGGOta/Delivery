@@ -4,14 +4,12 @@
     justify-content: center;
     width: 100%;
     height: 100vh;
-    background: url("../images/delivery.jpg") center no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
+    background-color: rgb(245, 245, 246);
 }
 
 .intro-title {
     margin-bottom: 20px;
-    color: #fff;
+    color: rgb(0, 0, 0);
     font-size: 20px;
     text-transform: uppercase;
     text-decoration: none;
@@ -21,60 +19,101 @@
 .slider {
     width: 1200px;
     height: 500px;
-    background:rgb(34, 34, 33); 
+    background:rgb(255, 255, 255); 
     margin: 0 auto;
-    text-align: center;
+    box-shadow: 0 18px 25px rgba(0, 0, 0, .1);
+    border: 2px solid #000000;
 }
 
-.image {
-    line-height: 500px;
-    background:rgb(34, 34, 33);
+.block {
     position: absolute;
     font-size: 20px;
-    width: 100%;
-    color: #fff;
     display: none;
+    text-align: center;
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
-.image.curry {
+.block.curry {
     display: block;
 }
 
-.image:first-child {
+.block:first-child {
     width: 1200px;
-    text-align: left;
-    padding-left: 6%;
-    background: url("../images/mexica.jpg") right no-repeat;
 }
 
-.image:nth-child(2) {
+.block:nth-child(2) {
     width: 1200px;
-    background: url("../images/bbq.jpg") right no-repeat;
-    text-align: left;
-    padding-left: 4%;
 }
 
-.image:nth-child(3) {
+.block:nth-child(3) {
     width: 1200px;
-    background: url("../images/meat.jpg") right no-repeat;
-    text-align: left;
-    padding-left: 4%;
 }
 
-.previous {
-    font-family: 'Montserrat',
-        sans-serif;
-    font-size: 16px;
-    background: rgb(34, 34, 33);
-    margin-top: 45%;  
-    text-decoration: none;   
+.spec {
+    padding-bottom: 10%;
 }
 
 .next {
+    text-decoration: none;
+    width: 140px;
+    height: 45px;
+    border-radius: 45px;
     font-family: 'Montserrat',
         sans-serif;
-    font-size: 16px;
-    background: rgb(34, 34, 33);
-    margin-top: 45%;
-    text-decoration: none
-} 
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: #524f4e;
+    background: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .3s; 
+    margin-top: 45%; 
+    margin-left: 35%; 
+}
+
+.previous {
+    text-decoration: none;
+    width: 140px;
+    height: 45px;
+    border-radius: 45px;
+    font-family: 'Montserrat',
+        sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: #524f4e;
+    background: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .3s;
+}
+
+
+.next:hover {
+    background: #2EE59D;
+    box-shadow: 0 15px 20px rgba(46, 229, 157, .4);
+    color: white;
+    transform: translateY(-7px);
+}
+
+.previous:hover {
+    background: #2EE59D;
+    box-shadow: 0 15px 20px rgba(46, 229, 157, .4);
+    color: white;
+    transform: translateY(-7px);
+}
+
+.link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 20px;
+    position: relative;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    transition: color .1s linear;
+}

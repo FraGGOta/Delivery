@@ -1,19 +1,19 @@
 .welcome {
     width: 100%; 
     margin-top: 150px;
-    color: #fff;
+    color: rgb(0, 0, 0);
     text-align: center;
 }
 
 .welcome-title {
-    font-size: 25px;
-    color: rgb(255, 255, 255);
+    font-size: 20px;
+    color: rgb(0, 0, 0);
     text-transform: uppercase;
 }
 
 .title {
     font-size: 25px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     text-transform: uppercase;
     height: 300px;
     width: 350px;
@@ -31,18 +31,18 @@
 
 .window-inner {
     position: relative;
-    background: #fff;
+    background: rgb(0, 0, 0);
 }
 
 .window-cart {
-    background: linear-gradient(to bottom, #252525, #7a7a7a);
+    background-color:rgb(255, 255, 255);
     transition: transform .2s linear;
 }
 
 .window-text {
     width: 100%;
     font-size: 18px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     opacity: 0;
     position: absolute;
     top: 50%;
