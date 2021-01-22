@@ -21,8 +21,7 @@
                     <a class="nav-link" href="index.html">ГЛАВНАЯ</a>
                     <a class="nav-link" href="about.html">О НАС</a>
                     <a class="nav-link" href="menu.html">МЕНЮ</a>
-                    <a class="nav-link" href="#">КАЧЕСТВО</a>
-                    <a class="nav-link" href="#">КОНТАКТЫ</a>
+                    <a class="nav-link" href="quality.html">КАЧЕСТВО</a>
                     <a class="nav-link" href="cart.html">КОРЗИНА</a>
                 </nav>
             </div>
@@ -32,25 +31,27 @@
     <div class="cart-menu"></div>
 
     <form action="" class="air">
-        <div class="form-row">Имя
-            <input type="text" id="ename">
+        <div class="row">Имя
+            <input type="name" name="name" id="ename" required>
         </div>
-        <div class="form-row">Адрес
+        <div class="row">Телефон
+            <div class="row-icon">
+                <i class="data telephone"></i>
+                <input pattern="^\+7\d{3}\d{7}$" value="+7" maxlength="12" id="etelephone" required>
+            </div>
+        </div> 
+        <div class="row">Почта
+            <div class="row-icon">
+                <i class="data email"></i>
+                <input type="email" name="email" id="eemail" required>
+            </div>
+        </div> 
+        
+        <div class="row">Ваш адрес
             <textarea rows="3" id="eaddress" required></textarea>
         </div>
-        <div class="form-row-icon">
-            <i class="fa telephone"></i>
-            <input class="inpt" id="etelephone" pattern="^\+7\d{3}\d{7}$" value="+7" maxlength="12">
-        </div>
-        <hr>
-        <div class="form-row-icon">
-            <i class="fa email"></i>
-            <input class="inpt" id="eemail">
-        </div>
-        <hr>
-        <i class="fa send"></i>
-        <button class="send-email">Заказать</button>
-        
+        <i class="data send"></i>
+        <button type="submit" class="send-email">Заказать</button> 
     </form>
 
     <div class="total"></div>

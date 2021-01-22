@@ -7,7 +7,6 @@
 }
 
 .titl {
-    /* padding: 3%; */
     font-size: 16px;
     font-family: 'Montserrat',
         sans-serif;
@@ -19,7 +18,6 @@
 }
 
 .mini-cart {
-    
     width: 100%;
     height: 80px;
     

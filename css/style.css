@@ -61,7 +61,6 @@ h6 {
     display: inline-block;
     vertical-align: right;
     position: relative;
-    
     text-decoration: none;
     transition: color .1s linear;
 }

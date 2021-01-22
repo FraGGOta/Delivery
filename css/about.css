@@ -10,12 +10,15 @@
 }
 
 .title {
-    font-size: 25px;
+    font-size: 22px;
     text-transform: uppercase;
     height: 300px;
     width: 350px;
     text-align: center;
     padding-top: 120px;
+    font-weight: bold;
+    font-family: 'Montserrat',
+        sans-serif;
 }
 
 .window {
@@ -28,11 +31,12 @@
 
 .window-inner {
     position: relative;
+    background-color: #333;
 }
 
 .window-cart {
-    background-color:rgb(255, 255, 255);
-    transition: transform .2s linear;
+    background-color: #fff;
+    transition: transrgb(0, 0, 0)
 }
 
 .window-text {
@@ -43,6 +47,10 @@
     top: 50%;
     transform: translate3d(0, -50%, 0);
     transition: opacity .2s linear;
+    padding: 2%;
+    letter-spacing: 2px;
+    font-family: 'Montserrat',
+        sans-serif;
 }
 
 .window-inner:hover .window-cart {

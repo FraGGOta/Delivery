@@ -77,39 +77,47 @@ function isEmpty(object) {
     return false;
 }
 
+ function isCheck() {
+    var mail = document.getElementById("eemail").value;
+    var phone = document.getElementById("etelephone").value;
+    var name = document.getElementById("ename").value;
+    var address = document.getElementById("eaddress").value;
+
+    var mail_reg = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
+    var phone_reg = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/i;
+    var name_reg = /^[a-zA-Zа-яёА-ЯЁ]+$/u;
+    var address_reg = /[\p{Alpha}\p{M}\p{Nd}\p{Pc}\p{Join_C}]/gu;
+
+    if (mail_reg.test(mail) && phone_reg.test(phone) && name_reg.test(name) && address_reg.test(address)) return true;
+        return false;
+}
+
 function sendEmail() {
     var ename = $('#ename').val();
     var eaddress = $('#eaddress').val();
     var etelephone = $('#etelephone').val();
     var eemail = $('#eemail').val();
 
-    if (ename!='' && eaddress!='' && etelephone!='' && eemail !='') {
+    if (isCheck()) {
         if (isEmpty(cart)) {
             $.post(
-                "core/mail.php",
+                "php/mail.php",
                 {
                     "ename" : ename,
                     "eaddress" : eaddress,
                     "etelephone" : etelephone,
                     "eemail" : eemail,
                     "cart" : cart
-                },
-                function(data) {
-                    if (data==1) {
-                        alert('Заказ отправлен');
-                    }
-                    else {
-                        alert('Повторите заказ');
-                    }
                 }
             );
-        }
+            alert('Заказ отправлен');
+        } 
         else {
                 alert('Корзина пуста');
-            }
-    }
+            } 
+    } 
     else {
-        alert('Заполните поля');
+        alert('Заполните поля верно');
     }
 }
 

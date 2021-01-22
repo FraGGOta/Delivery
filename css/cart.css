@@ -16,7 +16,7 @@
     font-weight: bold;
 }
 
-.form-row input {
+.row input {
     font-family: 'Montserrat',
         sans-serif;
     font-size: 18px;
@@ -24,7 +24,7 @@
     line-height: 40px;
 }
 
-.form-row textarea {
+.row textarea {
     font-family: 'Montserrat',
         sans-serif;
     font-size: 18px;
@@ -32,7 +32,7 @@
     line-height: 40px;
 }
 
-.form-row-icon input {
+.row-icon input {
     font-family: 'Montserrat',
         sans-serif;
     font-size: 18px;
@@ -42,23 +42,24 @@
     border-width: 0;
 }
 
-.form-row-icon .fa {
+.row-icon .data {
     position: absolute;
     width: 40px;
     height: 40px;
     line-height: 40px;
     text-align: center;
+    
 }
 
-.form-row-icon .telephone {
+.row-icon .telephone {
     background: url("../images/telephone.png") center no-repeat;
 }
 
-.form-row-icon .email {
+.row-icon .email {
     background: url("../images/email.png") center no-repeat;
 }
 
-.form-row-icon .send {
+.row-icon .send {
     background: url("../images/send.png") center no-repeat;
 }
 
