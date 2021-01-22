@@ -36,7 +36,7 @@
 
 .window-cart {
     background-color: #fff;
-    transition: transrgb(0, 0, 0)
+    transition: transform .2s linear;
 }
 
 .window-text {
