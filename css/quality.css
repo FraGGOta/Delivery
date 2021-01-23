@@ -1,0 +1,57 @@
+.container-quality {
+    display: relative;
+    margin: 75px;
+}
+
+.title {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.paragraph {
+    background-color: #fff;
+    width: 1200px;
+    height: 100px;  
+    margin: 0 auto;
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+    -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+    border: 3px solid;
+    margin-bottom: 50px;
+}
+
+.icon .data{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+
+.icon .free{
+    background: url("../images/free.png") center no-repeat;
+}
+
+.icon .clock {
+    background: url("../images/clock.png") center no-repeat;
+}
+
+.icon .alarm {
+    background: url("../images/alarm.png") center no-repeat;
+}
+
+.icon .non-stop {
+    background: url("../images/24.png") center no-repeat;
+}
+
+.text {
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Montserrat',
+        sans-serif;
+    padding-left: 100px;
+    padding-top: 25px;
+    padding-right: 45px;
+}
