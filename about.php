@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,23 +10,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/quality.css">
 </head>
-
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="header-inner">
-                <h2 class="time"> Время доставки круглосуточно </h2>
-                <nav class="nav">
-                    <a class="nav-link" href="index.html">ГЛАВНАЯ</a>
-                    <a class="nav-link" href="quality.html">КАЧЕСТВО</a>
-                    <a class="nav-link" href="menu.html">МЕНЮ</a>
-                    <a class="nav-link" href="about.html">О НАС</a>
-                    <a class="nav-link" target="_blank" href="https://www.google.com/maps/d/viewer?mid=12lDlL8zD6PEgGtoHQlZr3arhjVB9x9oV&ll=55.014077770153605%2C82.91450700583833&z=12">ЗОНА ДОСТАВКИ</a>
-                    <a class="nav-link" href="cart.html">КОРЗИНА</a>
-                </nav>
-            </div>
-        </div>
-    </div>
+
+    <?php include('navigation.php'); ?>
 
     <div class="container-quality">
 
@@ -63,11 +48,9 @@
             </div>
         </div>
 
-        <!-- <iframe src="https://www.google.com/maps/d/u/0/embed?mid=12lDlL8zD6PEgGtoHQlZr3arhjVB9x9oV" width="640" height="480"></iframe> -->
     </div>
 
     <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/menu.js"></script>
+    
 </body>
-
 </html>

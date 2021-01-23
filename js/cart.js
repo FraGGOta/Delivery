@@ -101,7 +101,7 @@ function sendEmail() {
     if (isCheck()) {
         if (isEmpty(cart)) {
             $.post(
-                "php/mail.php",
+                "core/mail.php",
                 {
                     "ename" : ename,
                     "eaddress" : eaddress,
@@ -124,4 +124,5 @@ function sendEmail() {
 $(document).ready(function () {
     loadCart();
     $('.send-email').on('click', sendEmail);
+    localStorage.clear('cart');
 });

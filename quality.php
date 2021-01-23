@@ -13,21 +13,8 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="header-inner">
-                <h2 class="time"> Время доставки круглосуточно </h2>
-                <nav class="nav">
-                    <a class="nav-link" href="index.html">ГЛАВНАЯ</a>
-                    <a class="nav-link" href="quality.html">КАЧЕСТВО</a>
-                    <a class="nav-link" href="menu.html">МЕНЮ</a>
-                    <a class="nav-link" href="about.html">О НАС</a>
-                    <a class="nav-link" target="_blank" href="https://www.google.com/maps/d/viewer?mid=12lDlL8zD6PEgGtoHQlZr3arhjVB9x9oV&ll=55.014077770153605%2C82.91450700583833&z=12">ЗОНА ДОСТАВКИ</a>
-                    <a class="nav-link" href="cart.html">КОРЗИНА</a>
-                </nav>
-            </div>
-        </div>
-    </div>
+
+    <?php include('navigation.php'); ?>
 
     <div class="welcome">
         <h2 class="welcome-title">Привет, друг!</h2>
@@ -47,14 +34,14 @@
             </div>
             <div class="window-text">Мы выпекаем вкусную пиццу! Мы серьезно заморачиваемся по поводу соуса, теста и начинки! Доставляем очень быстро, ведь пицца вкусная пока горячая!</div>
         </div>
-    
+
         <div class="window-inner">
             <div class="window-cart">
                 <div class="title">Мы приносим праздник</div>
             </div>
             <div class="window-text">Так говорят наши клиенты! Мы вкладываем душу и сердце. Вроде бы мы самая простая доставка, но наши клиенты говорят, что мы доставляем настоящий праздник в каждый дом!</div>
         </div>
-    
+
     </div>
 
     <div class="window">
@@ -64,14 +51,14 @@
             </div>
             <div class="window-text">Секрет идеального вкуса заключается в тщательном подборе соусов — каждый из них гармонично сочетается с основным блюдом. Все соусы имеют оригинальную рецептуру. </div>
         </div>
-    
+
         <div class="window-inner">
             <div class="window-cart">
                 <div class="title">Сибирский бургер</div>
             </div>
             <div class="window-text">Наш бургер по-настоящему суров! Прямо как жизнь в Сибири. Он большой, вкусный, горячий с идеальной прожаркой. Так и тянет заказать ещё один!</div>
         </div>
-        
+
         <div class="window-inner">
             <div class="window-cart">
                 <div class="title">Натуральный морс</div>
@@ -79,3 +66,8 @@
             <div class="window-text">Варим сами, с любовью. Полностью натуральный и с минимальным количеством сахара. Даже облепиховый есть!</div>
         </div>
     </div>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+
+</body>
+</html>

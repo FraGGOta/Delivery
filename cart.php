@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,23 +10,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/cart.css">
 </head>
-
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="header-inner">
-                <h2 class="time"> Время доставки круглосуточно </h2>
-                <nav class="nav">
-                    <a class="nav-link" href="index.html">ГЛАВНАЯ</a>
-                    <a class="nav-link" href="quality.html">КАЧЕСТВО</a>
-                    <a class="nav-link" href="menu.html">МЕНЮ</a>
-                    <a class="nav-link" href="about.html">О НАС</a>
-                    <a class="nav-link" target="_blank" href="https://www.google.com/maps/d/viewer?mid=12lDlL8zD6PEgGtoHQlZr3arhjVB9x9oV&ll=55.014077770153605%2C82.91450700583833&z=12">ЗОНА ДОСТАВКИ</a>
-                    <a class="nav-link" href="cart.html">КОРЗИНА</a>
-                </nav>
-            </div>
-        </div>
-    </div>
+
+    <?php include('navigation.php'); ?>
 
     <div class="cart-menu"></div>
 
@@ -40,19 +25,19 @@
                 <i class="data telephone"></i>
                 <input pattern="^\+7\d{3}\d{7}$" value="+7" maxlength="12" id="etelephone" required>
             </div>
-        </div> 
+        </div>
         <div class="row">Почта
             <div class="row-icon">
                 <i class="data email"></i>
                 <input type="email" name="email" id="eemail" required>
             </div>
-        </div> 
-        
+        </div>
+
         <div class="row">Ваш адрес
             <textarea rows="3" id="eaddress" required></textarea>
         </div>
         <i class="data send"></i>
-        <button type="submit" class="send-email">Заказать</button> 
+        <button type="submit" class="send-email">Заказать</button>
     </form>
 
     <div class="total"></div>
@@ -60,6 +45,6 @@
 
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/cart.js"></script>
-</body>
 
+</body>
 </html>
