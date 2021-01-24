@@ -124,5 +124,4 @@ function sendEmail() {
 $(document).ready(function () {
     loadCart();
     $('.send-email').on('click', sendEmail);
-    localStorage.clear('cart');
 });

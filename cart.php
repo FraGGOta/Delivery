@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <?php include('head.php'); ?>
     <link rel="stylesheet" href="css/cart.css">
@@ -40,7 +41,6 @@
 
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/cart.js"></script>
-
 </body>
 
 </html>
