@@ -3,12 +3,12 @@
 $action = $_POST['action'];
 $host = "localhost";
 $user = "u99622_delivery";
-$pass = "";
+$pass = "мой пароль";
 $name = "u99622_delivery";
 
 function connect()
 {
-    $db = mysqli_connect("localhost", "u99622_delivery", "", "u99622_delivery");
+    $db = mysqli_connect("localhost", "u99622_delivery", "мой пароль", "u99622_delivery");
     if (!$db) {
         die("Connection failed: " . mysqli_connect_error());
     }
