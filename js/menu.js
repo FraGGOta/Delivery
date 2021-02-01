@@ -1,10 +1,17 @@
 var cart = {}; 
 
 function init() {
-    $.getJSON("goods.json", goodsOut); 
+    $.post(
+        "dataBase/function.php",
+        {
+            "action" : "loadGoods"
+        },
+        goodsOut
+    );
 }
    
 function goodsOut(data) {
+    data = JSON.parse(data);
     var out='';
     for (var key in data) {
         out +='<div class="cart">';
@@ -45,9 +52,12 @@ function showCart() {
 
 function loadCart() {
     if (localStorage.getItem('cart')) {
-        cart = JSON.parse(localStorage.getItem('cart'));
-        showCart();
-    }    
+        cart = JSON.parse(localStorage.getItem('cart'));   
+            showCart();
+        }
+    else {
+        $('.main-cart').html('Корзина пуста!');
+    }
 }
 
 $(document).ready(function () {

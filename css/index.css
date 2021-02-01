@@ -117,3 +117,14 @@
     text-decoration: none;
     transition: color .1s linear;
 }
+
+.footer {
+    width: 100%;
+    max-width: 1455px;
+    text-align: right;
+    margin: 0 auto;
+    padding-top: 30px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}

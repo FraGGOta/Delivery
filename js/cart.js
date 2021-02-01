@@ -16,16 +16,23 @@ function showMainCart() {
             $('.main-cart').html('Корзина пуста');
     }
     else {
-        $.getJSON('goods.json', function (data) {
-            var goods = data;
-            var out = '';
-            var total = 0;
+        $.post(
+        "dataBase/function.php", 
+        { 
+            "action" : "loadGoods"      
+        },
+
+    function(data) {
+        var goods = JSON.parse(data);
+        console.log(goods);
+        var out = '';
+        var total = 0;
             for (var id in cart) {  
                 out +='<div class="main-cart">';
                 out += `<img class="imgss" src = "images\\${goods[id].img}">`;
                 out += `<p class="name">${goods[id].name}</p>`;
                 out += `<button data-id="${id}" class="minus-goods">-</button>`;
-                out += ` ${cart[id]}`;
+                out += `${cart[id]}`;
                 out += `<button data-id="${id}" class="plus-goods">+</button>`;
                 out += `<div class="cost">${goods[id].cost * cart[id]} РУБ </div>`;
                 out += `<button data-id="${id}" class="del-goods">x</button>`;
@@ -78,39 +85,40 @@ function isEmpty(object) {
 }
 
  function isCheck() {
-    var mail = document.getElementById("eemail").value;
-    var phone = document.getElementById("etelephone").value;
-    var name = document.getElementById("ename").value;
-    var address = document.getElementById("eaddress").value;
+    var mail = document.getElementById("mail").value;
+    var number = document.getElementById("number").value;
+    var name = document.getElementById("name").value;
+    var address = document.getElementById("address").value;
 
     var mail_reg = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
-    var phone_reg = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/i;
+    var number_reg = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/i;
     var name_reg = /^[a-zA-Zа-яёА-ЯЁ]+$/u;
     var address_reg = /[\p{Alpha}\p{M}\p{Nd}\p{Pc}\p{Join_C}]/gu;
 
-    if (mail_reg.test(mail) && phone_reg.test(phone) && name_reg.test(name) && address_reg.test(address)) return true;
+    if (mail_reg.test(mail) && number_reg.test(number) && name_reg.test(name) && address_reg.test(address)) return true;
         return false;
 }
 
 function sendEmail() {
-    var ename = $('#ename').val();
-    var eaddress = $('#eaddress').val();
-    var etelephone = $('#etelephone').val();
-    var eemail = $('#eemail').val();
+    var name = $('#name').val();
+    var address = $('#address').val();
+    var number = $('#number').val();
+    var mail = $('#mail').val();
 
     if (isCheck()) {
         if (isEmpty(cart)) {
             $.post(
-                "core/mail.php",
+                "mail/mail.php",
                 {
-                    "ename" : ename,
-                    "eaddress" : eaddress,
-                    "etelephone" : etelephone,
-                    "eemail" : eemail,
+                    "name" : name,
+                    "address" : address,
+                    "number" : number,
+                    "mail" : mail,
                     "cart" : cart
                 }
             );
             alert('Заказ отправлен');
+            localStorage.clear();
         } 
         else {
                 alert('Корзина пуста');
