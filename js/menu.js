@@ -43,20 +43,17 @@ function saveCart() {
 }
 
 function showCart() {
-    var out="";
+    all_count = 0;
     for (var key in cart) {
-        out += key + ' --- ' + cart[key] + '; ';
+        all_count += cart[key];
     }
-    $('.mini-cart').html(out);
+    $('.mini-cart').html(all_count);
 }
 
 function loadCart() {
     if (localStorage.getItem('cart')) {
         cart = JSON.parse(localStorage.getItem('cart'));   
-            showCart();
-        }
-    else {
-        $('.main-cart').html('Корзина пуста!');
+        showCart();
     }
 }
 

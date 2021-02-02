@@ -10,8 +10,6 @@
     <?php include('navigation.php'); ?>
 
     <div class="container-menu">
-        <div class="titl">Ваши выбранные позиции. Заказ можно оформить в меню "корзина"</div>
-        <div class="mini-cart"></div>
         <div class="goods-out"></div>
     </div>
 

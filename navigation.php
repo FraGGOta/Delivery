@@ -9,6 +9,7 @@
                 <a class="nav-link" href="about.php">О НАС</a>
                 <a class="nav-link" target="_blank" href="https://www.google.com/maps/d/viewer?mid=12lDlL8zD6PEgGtoHQlZr3arhjVB9x9oV&ll=55.014077770153605%2C82.91450700583833&z=12">ЗОНА ДОСТАВКИ</a>
                 <a class="nav-link" href="cart.php">КОРЗИНА</a>
+                <span class="mini-cart"></span>
             </nav>
         </div>
     </div>
