@@ -1,5 +1,25 @@
 <?php
 
+function connect()
+{
+    $db = mysqli_connect("localhost", "u99622_delivery", "мой пароль", "u99622_delivery");
+    if (!$db) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    return $db;
+}
+
+$db = connect();
+$sql = "SELECT * FROM goods";
+$result = mysqli_query($db, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    $json = array();
+    while ($row = mysqli_fetch_assoc($result)) {
+        $json[$row["id"]] = $row;
+    }
+}
+
 $to = 'ramus99.99@mail.ru' . ',';
 $to .= $_POST['mail'];
 $subject = 'Delivery';
