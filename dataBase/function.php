@@ -11,7 +11,7 @@ function loadGoods()
     if (mysqli_num_rows($result) > 0) {
         $out = array();
         while ($row = mysqli_fetch_assoc($result)) {
-            $out[$row["name"]] = $row;
+            $out[$row["id"]] = $row;
         }
         echo json_encode($out);
     } else {

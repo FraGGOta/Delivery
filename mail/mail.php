@@ -14,9 +14,9 @@ $sql = "SELECT * FROM goods";
 $result = mysqli_query($db, $sql);
 
 if (mysqli_num_rows($result) > 0) {
-    $json = array();
+    $goods = array();
     while ($row = mysqli_fetch_assoc($result)) {
-        $json[$row["id"]] = $row;
+        $goods[$row["id"]] = $row;
     }
 }
 
@@ -35,11 +35,11 @@ $total = 0;
 
 $message .= '<p><b>Заказ</b></p>';
 foreach ($cart as $id => $count) {
-    $message .= $json[$id]['name'] . ': ';
+    $message .= $goods[$id]['name'] . ': ';
     $message .= $count . 'шт. ';
-    $message .= $count * $json[$id]['cost'] . ' руб ';
+    $message .= $count * $goods[$id]['cost'] . ' руб ';
     $message .= '<br>' . '<br>';
-    $total += $count * $json[$id]['cost'];
+    $total += $count * $goods[$id]['cost'];
 }
 $message .= '<b>Итого: </b>' . $total . ' руб ';
 

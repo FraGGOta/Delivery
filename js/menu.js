@@ -12,15 +12,16 @@ function init() {
    
 function goodsOut(data) {
     data = JSON.parse(data);
+    console.log(data);
     var out='';
-    for (var key in data) {
-        out +='<div class="cart">';
-        out +=`<img class="imgs" src="images/${data[key].img}" alt="">`;
-        out +=`<p class="name">${data[key].name}</p>`;
-        out +=`<div class="descr">${data[key].descr}</div>`;
-        out +=`<div class="cost">${data[key].cost} РУБ</div>`;
-        out +=`<button class="add-to-cart" data-id="${key}">Купить</button>`;
-        out +='</div>';
+    for (var id in data) {
+        out += '<div class="cart">';
+        out += `<img class="imgs" src="images/${data[id].img}" alt="">`;
+        out += `<p class="name">${data[id].name}</p>`;
+        out += `<div class="descr">${data[id].descr}</div>`;
+        out += `<div class="cost">${data[id].cost} РУБ</div>`;
+        out += `<button class="add-to-cart" data-id="${id}">Купить</button>`;
+        out += '</div>';
     }
     $('.goods-out').html(out);
     $('.add-to-cart').on('click', addToCart)
@@ -43,11 +44,11 @@ function saveCart() {
 }
 
 function showCart() {
-    all_count = 0;
+    count = 0;
     for (var key in cart) {
-        all_count += cart[key];
+        count += cart[key];
     }
-    $('.mini-cart').html(all_count);
+    $('.mini-cart').html(count);
 }
 
 function loadCart() {

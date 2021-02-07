@@ -28,7 +28,7 @@ function showMainCart() {
         var out = '';
         var total = 0;
             for (var id in cart) {  
-                out +='<div class="main-cart">';
+                out += '<div class="main-cart">';
                 out += `<img class="imgss" src = "images\\${goods[id].img}">`;
                 out += `<p class="name">${goods[id].name}</p>`;
                 out += `<button data-id="${id}" class="minus-goods">-</button>`;
@@ -37,7 +37,7 @@ function showMainCart() {
                 out += `<div class="cost">${goods[id].cost * cart[id]} РУБ </div>`;
                 out += `<button data-id="${id}" class="del-goods">x</button>`;
                 total += goods[id].cost * cart[id];
-                out +='</div>';
+                out += '</div>';
             }
             $('.main-cart').html(out);
             $('.del-goods').on('click', delGoods);
@@ -115,6 +115,9 @@ function sendEmail() {
                     "number" : number,
                     "mail" : mail,
                     "cart" : cart
+                },
+                function (result) {
+                    console.log(result)
                 }
             );
             alert('Заказ отправлен');
