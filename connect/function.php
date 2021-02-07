@@ -10,7 +10,7 @@ function connect()
 {
     $db = mysqli_connect("localhost", "u99622_delivery", "мой пароль", "u99622_delivery");
     if (!$db) {
-        die("Connection failed: " . mysqli_connect_error());
+        die("connection failed: " . mysqli_connect_error());
     }
     return $db;
 }

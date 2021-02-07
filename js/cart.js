@@ -24,7 +24,6 @@ function showMainCart() {
 
     function(data) {
         var goods = JSON.parse(data);
-        console.log(goods);
         var out = '';
         var total = 0;
             for (var id in cart) {  
@@ -115,9 +114,6 @@ function sendEmail() {
                     "number" : number,
                     "mail" : mail,
                     "cart" : cart
-                },
-                function (result) {
-                    console.log(result)
                 }
             );
             alert('Заказ отправлен');

@@ -12,7 +12,6 @@ function init() {
    
 function goodsOut(data) {
     data = JSON.parse(data);
-    console.log(data);
     var out='';
     for (var id in data) {
         out += '<div class="cart">';
