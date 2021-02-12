@@ -20,7 +20,7 @@ if (mysqli_num_rows($result) > 0) {
     }
 }
 
-$to = 'ramus99.99@mail.ru' . ',';
+$to = 'delivery_employees@mail.ru' . ',';
 $to .= $_POST['mail'];
 $subject = 'Delivery';
 $headers .= 'Content-type: text/html; charset=utf-8 \r\n';

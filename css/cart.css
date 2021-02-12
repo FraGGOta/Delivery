@@ -16,15 +16,7 @@
     font-weight: bold;
 }
 
-.row input {
-    font-family: 'Montserrat',
-        sans-serif;
-    font-size: 18px;
-    width: 100%;
-    line-height: 40px;
-}
-
-.row textarea {
+.row input, .row textarea{
     font-family: 'Montserrat',
         sans-serif;
     font-size: 18px;
@@ -65,7 +57,7 @@
 
 .send-email {
     width: 100%;
-    line-height: 40px;
+    line-height: 50px;
     text-decoration: none;
     font-family: 'Montserrat',
         sans-serif;

@@ -128,3 +128,83 @@
     text-transform: uppercase;
     font-weight: bold;
 }
+
+.open-button {
+    color: #524f4e;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .3s;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 2px;
+    overflow: hidden;
+     font-family: 'Montserrat',
+        sans-serif;
+    text-transform: uppercase;
+    border: 1px solid;
+    text-decoration: none;
+    padding: 16px 20px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+}
+
+.form-container .send-email:hover, .open-button:hover {
+    background: #2EE59D;
+    color: white;
+}
+
+.form-container .cancel:hover {
+    background: #448AFF;
+    color: white;
+}
+
+.form-container .send-email:active, .open-button:active {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;  
+}
+
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255); 
+}
+
+.form-container input, .form-container textarea {
+    font-family: 'Montserrat',
+        sans-serif;
+    font-size: 16px;
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+.form-container .send-email {
+    padding: 16px 20px;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+    color: #524f4e;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 2px;
+    overflow: hidden;
+    font-family: 'Montserrat',
+        sans-serif;
+    text-transform: uppercase;
+    border: 1px solid;
+    text-decoration: none;
+    cursor: pointer;
+}

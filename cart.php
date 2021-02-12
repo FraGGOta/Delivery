@@ -32,6 +32,7 @@
         <div class="row">Ваш адрес
             <textarea rows="3" id="address" required></textarea>
         </div>
+
         <i class="data send"></i>
         <button type="submit" class="send-email">Заказать</button>
     </form>

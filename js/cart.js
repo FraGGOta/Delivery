@@ -107,7 +107,7 @@ function sendEmail() {
     if (isCheck()) {
         if (isEmpty(cart)) {
             $.post(
-                "mail/mail.php",
+                "mail/order.php",
                 {
                     "name" : name,
                     "address" : address,
