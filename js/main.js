@@ -1,31 +1,54 @@
+autoSlider();
+
+var timer;
+var images = document.querySelectorAll('.slide img');
+var current = 2;
+
 function slider() {
-    $('.next').click(function() {
-		var currentImage = $('.block.curry');
-		var currentImageIndex = $('.block.curry').index();
-		var nextImageIndex = currentImageIndex + 1;
-		var nextImage = $('.block').eq(nextImageIndex);
-		currentImage.fadeOut(1000);
-		currentImage.removeClass('curry');
+	for (let i = 0; i < images.length; i++) {
+		images[i].classList.add('opacity0');
+	}
+	images[current].classList.remove('opacity0');
+}
 
-		if(nextImageIndex == ($('.block:last').index()+1)) {
-			$('.block').eq(0).fadeIn(1000);
-			$('.block').eq(0).addClass('curry');
-		} else {
-			nextImage.fadeIn(1000);
-			nextImage.addClass('curry');
+slider();
+
+document.querySelector('.right').onclick = function () {
+ 	if (current - 1 == - 1) {
+		current = images.length - 1;
+ 	}
+ 	else {
+ 		current--;
+ 	}
+	slider();
+};
+
+document.querySelector('.left').onclick = function () {
+	if (current + 1 == images.length) {
+		current = 0;
+	}
+	else {
+		current++;
+	}
+	slider();
+};
+
+function autoSlider() {
+	timer = setTimeout(function() {
+		for (let i = 0; i < images.length; i++) {
+			images[i].classList.add('opacity0');
 		}
-	});
+		images[current].classList.remove('opacity0');
 
-	$('.previous').click(function() {
-		var currentImage = $('.block.curry');
-		var currentImageIndex = $('.block.curry').index();
-		var prevImageIndex = currentImageIndex - 1;
-		var prevImage = $('.block').eq(prevImageIndex);
-		currentImage.fadeOut(1000);
-		currentImage.removeClass('curry');
-		prevImage.fadeIn(1000);
-		prevImage.addClass('curry');
-    });
+		if (current + 1 == images.length) {
+			current = 0;
+		}
+		else {
+			current++;
+		}
+		slider();
+		autoSlider();
+	}, 5000);
 }
 
 function openForm() {
@@ -35,9 +58,3 @@ function openForm() {
 function closeForm() {
 	document.getElementById("myForm").style.display = "none";
 }
-
-$(document).ready(function () {
-    slider();
-	openForm();
-	closeForm();
-});
