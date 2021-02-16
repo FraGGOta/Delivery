@@ -60,6 +60,7 @@
     border-radius: 50%;
     border: 3px black solid;
     color: black;
+    cursor: pointer;
 }
 
 .left {
@@ -79,6 +80,7 @@
     border-radius: 50%;
     border: 3px black solid;
     color: black;
+    cursor: pointer;
 }
 
 .right:hover, .left:hover {

@@ -1,66 +1,57 @@
-.welcome {
-    width: 100%; 
-    margin-top: 50px;
-    text-align: center;
-}
-
-.welcome-title {
-    font-size: 20px;
-    text-transform: uppercase;
+.container-quality {
+    display: relative;
+    margin: 75px;
 }
 
 .title {
-    font-size: 22px;
+    font-size: 20px;
     text-transform: uppercase;
-    height: 300px;
-    width: 350px;
+    margin-bottom: 10px;
     text-align: center;
-    padding-top: 120px;
     font-weight: bold;
-    font-family: 'Montserrat',
-        sans-serif;
 }
 
-.window {
-    display: flex;
-    margin-top: 50px;
-    justify-content: space-around;
-    flex-direction: row;
-    align-items: center;
-}
-
-.window-inner {
-    position: relative;
-    background-color: #333;
-}
-
-.window-cart {
+.paragraph {
     background-color: #fff;
-    transition: transform .2s linear;
+    width: 1200px;
+    height: 100px;  
+    margin: 0 auto;
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+    -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+    border: 3px solid;
+    margin-bottom: 50px;
 }
 
-.window-text {
-    width: 100%;
-    font-size: 18px;
-    opacity: 0;
+.icon .data{
     position: absolute;
-    top: 50%;
-    transform: translate3d(0, -50%, 0);
-    transition: opacity .2s linear;
-    padding: 2%;
-    letter-spacing: 2px;
+    width: 100px;
+    height: 100px;
+}
+
+.icon .free{
+    background: url("../images/free.png") center no-repeat;
+}
+
+.icon .clock {
+    background: url("../images/clock.png") center no-repeat;
+}
+
+.icon .alarm {
+    background: url("../images/alarm.png") center no-repeat;
+}
+
+.icon .non-stop {
+    background: url("../images/24.png") center no-repeat;
+}
+
+.text {
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
     font-family: 'Montserrat',
         sans-serif;
-}
-
-.window-inner:hover .window-cart {
-    transform: translate3d(-10px, -10px, 0);
-}
-
-.window-inner:hover .title {
-    opacity: 0;
-}
-
-.window-inner:hover .window-text {
-    opacity: 1;
+    padding-left: 100px;
+    padding-top: 25px;
+    padding-right: 45px;
 }

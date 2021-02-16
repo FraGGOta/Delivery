@@ -55,16 +55,6 @@ h6 {
     height: 50px;
 }
 
-.time {
-    font-size: 20px;
-    text-transform: uppercase;
-    display: inline-block;
-    vertical-align: right;
-    position: relative;
-    text-decoration: none;
-    transition: color .1s linear;
-}
-
 .nav {
     font-size: 20px;
     text-transform: uppercase;

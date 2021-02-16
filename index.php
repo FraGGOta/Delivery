@@ -11,6 +11,7 @@
 	<?php include('navigation.php'); ?>
 
 	<div class="intro">
+
 	 	<h3 class="intro-title">Уникальные предложeния, не пропусти!</h3>
 		<div class="slider">
 			<div class="slide">
@@ -21,6 +22,7 @@
 			<button class="right"><</button>
 			<button class="left">></button>
 		</div>
+
    	</div> 
 
    	<!-- <div class="footer">
@@ -46,7 +48,7 @@
 	</div>
 
    	<script src="../js/jquery-3.5.1.min.js"></script>
-   	<script src="../js/main.js"></script>
+   	<script src="../js/index.js"></script>
 
 </body>
 </html>

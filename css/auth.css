@@ -41,6 +41,7 @@
     text-decoration: none;
     color: #524f4e;
     outline: 0;  
+    cursor: pointer;
 }
 
 .signin button:hover {
