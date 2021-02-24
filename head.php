@@ -3,5 +3,5 @@
 <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
 
 <title>Delivery</title>
-<link rel="icon" type="image/png" href="images/icon.png">
+<link rel="icon" type="image/png" href="images/logo.png">
 <link rel="stylesheet" href="css/style.css">
