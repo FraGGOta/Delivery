@@ -1,108 +1,41 @@
-.window {
+.window 
+{
     display: flex;
+    margin-top: 100px;
     justify-content: space-around;
     flex-direction: row;
     align-items: center;
-    margin-top: 100px;
 }
 
-.block-1 {
-    font-size: 36px;
-    text-transform: uppercase;
-    width: 350px;
-    text-align: center;
-    font-weight: bold;
-    font-family: 'Montserrat',
-        sans-serif;
-}
-
-.block-2 {
-    font-size: 20px;
-    width: 550px;
-    text-align: left;
-    font-family: 'Montserrat',
-        sans-serif;
-    box-shadow: 0 18px 25px rgba(0, 0, 0, .1);
-    background-color: rgb(255, 255, 255);
+.window-cart 
+{
+    background-color: #fff;
+    border: 2px inset black;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
     padding: 10px;
-    border: 3px solid black;
-}
-
-.block-3 {
-    width: 350px;
-    background-color: rgb(232, 232, 240);
-    box-shadow: 0 18px 25px rgba(0, 0, 0, .1);
-}
-
-.block-4 {
-    margin-top: 3%;
-    width: 1200px;
-    background-color: rgb(255, 255, 255);
-    padding: 10px;
-    font-size: 20px;
     font-family: 'Montserrat',
         sans-serif;
-    border: 4px double black;
 }
 
-.head {
-    margin-top: 5%;
-    font-size: 16px;
-    font-family: 'Montserrat',
-        sans-serif;
-    overflow: hidden;
-    letter-spacing: 2px;
-    padding: 3px;
-}
-
-.text {
-    margin-bottom: 5%;
+.text 
+{
     font-size: 18px;
     font-weight: bold;
     font-family: 'Montserrat',
         sans-serif;
     overflow: hidden;
-    padding: 3px;       
+    padding-right: 3px;       
 }
 
-.heading {
-    margin-bottom: 3%;
+.title 
+{
     font-size: 18px;
     font-weight: bold;
     font-family: 'Montserrat',
         sans-serif;
     overflow: hidden;
-    padding: 3px;  
-    text-align: center;
-    text-transform: uppercase; 
-}
-
-.button {
-    color: #524f4e;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
-    transition: .3s;
-    font-weight: bold;
-    font-size: 14px;
-    letter-spacing: 2px;
-    overflow: hidden;
-    font-family: 'Montserrat',
-        sans-serif;
     text-transform: uppercase;
-    border: 1px solid;
-    text-decoration: none;
-    width: 280px;
-    height: 55px;
-    border-radius: 10px;
-    position: relative;
-    cursor: pointer;
-}
-
-.button:hover {
-    background: #2EE59D;
-    color: white; 
-}
-
-.button:active {
-    transform: translateY(-10px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding-bottom: 10px;
 }

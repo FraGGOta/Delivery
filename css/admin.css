@@ -1,11 +1,13 @@
 
-.shape {
+.shape 
+{
     position: absolute;
     left: 43%;
     top: 20%;
 }
 
-.signin input {
+.signin input 
+{
     position: relative;
     display: block;
     width: 250px;
@@ -15,7 +17,8 @@
     font-size: 14px;
 }
 
-.signin textarea {
+.signin textarea 
+{
     position: relative;
     display: block;
     width: 250px;
@@ -25,7 +28,8 @@
     font-size: 14px;
 }
 
-.signin button {
+.signin button 
+{
     position: relative;
     display: block;
     width: 250px;
@@ -42,17 +46,20 @@
     margin-bottom: 10px;
 }
 
-.signin button:hover {
+.signin button:hover 
+{
     background: #2EE59D;
     color: white;
 }
 
-.signin button:active {
+.signin button:active 
+{
     transform: translateY(-10px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.link {
+.link 
+{
     text-decoration: none;
     font-family: 'Montserrat',
         sans-serif;
@@ -64,6 +71,7 @@
     left: 39%;
 } 
 
-.link:hover {
+.link:hover 
+{
     color: #2EE59D;
 }

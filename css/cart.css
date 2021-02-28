@@ -1,11 +1,5 @@
-.cart-menu {
-    height: 100%;
-    width: 100%;
-    max-width: 1500px;
-    margin: 0 auto;
-}
-
-.air {
+.air 
+{
     font-size: 20px;
     max-width: 350px;
     margin: 50px auto 0;
@@ -16,7 +10,8 @@
     font-weight: bold;
 }
 
-.row input, .row textarea{
+.row input, .row textarea
+{
     font-family: 'Montserrat',
         sans-serif;
     font-size: 18px;
@@ -24,7 +19,8 @@
     line-height: 40px;
 }
 
-.row-icon input {
+.row-icon input 
+{
     font-family: 'Montserrat',
         sans-serif;
     font-size: 18px;
@@ -34,28 +30,32 @@
     border-width: 0;
 }
 
-.row-icon .data {
+.row-icon .data 
+{
     position: absolute;
     width: 40px;
     height: 40px;
     line-height: 40px;
     text-align: center;
-    
 }
 
-.row-icon .telephone {
+.row-icon .telephone 
+{
     background: url("../images/telephone.png") center no-repeat;
 }
 
-.row-icon .email {
+.row-icon .email 
+{
     background: url("../images/email.png") center no-repeat;
 }
 
-.row-icon .send {
+.row-icon .send 
+{
     background: url("../images/send.png") center no-repeat;
 }
 
-.send-email {
+.send-email 
+{
     width: 100%;
     line-height: 50px;
     text-decoration: none;
@@ -72,17 +72,20 @@
     cursor: pointer;
 }
 
-.send-email:hover {
+.send-email:hover 
+{
     background: #2EE59D;
     color: white;
 }
 
-.send-email:active {
+.send-email:active 
+{
     transform: translateY(-10px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.total {
+.total-sum 
+{
     font-size: 20px;
     font-family: 'Montserrat',
         sans-serif;
@@ -92,22 +95,40 @@
     font-weight: bold;
     position:relative;
     text-align: center;
-    padding: 5%;
+    padding: 35px;
 }
 
-.main-cart {
-    height: 535px;
+.plus-goods, .minus-goods, .delete-goods 
+{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.cart-container
+{
+    height: 100%;
+    width: 100%;
+    max-width: 1620px;
+    margin: 0 auto;
+}
+
+.main-cart 
+{
+    height: 380px;
     font-size: 20px;
     text-align: center;
-    float:left;
-    padding-left: 100px;
+    float: left;
+    padding-right: 25px;
+    padding-left: 25px;
+    font-weight: bold;
 }
 
-.img_logo {
-    text-align: center;
-}
-
-.imgss {
-    width: 128px;
-    height: 128px;
+.images 
+{
+    width: 172px;
+    height: 172px;
 }

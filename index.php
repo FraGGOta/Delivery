@@ -25,10 +25,6 @@
 
    	</div> 
 
-   	<!-- <div class="footer">
-      	<a class="nav-link" href="auth.php">ВХОД</a>
-   	</div> -->
-
 	<button class="open-button" onclick="openForm()">Поддержка</button>
 
 	<div class="form-popup" id="myForm">

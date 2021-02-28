@@ -1,13 +1,14 @@
 <?php
 
-function selectOneGoods() 
+function selectGoods() 
 {
     $db = connect();
     $id = $_POST['gid'];
     $sql = "SELECT * FROM goods WHERE id = '$id'";
     $result = mysqli_query($db, $sql);
 
-    if (mysqli_num_rows($result) > 0) {
+    if (mysqli_num_rows($result) > 0) 
+    {
         $row = mysqli_fetch_assoc($result);
         echo json_encode($row);
     } else {
@@ -28,7 +29,8 @@ function updateGoods()
 
     $sql = "UPDATE goods SET name = '$name', cost = '$cost', descr = '$descr', ord = '$ord', img = '$img' WHERE id = '$id' ";
 
-    if (mysqli_query($db, $sql)) {
+    if (mysqli_query($db, $sql)) 
+    {
         echo "successfully";
     } else {
         echo "error" . mysqli_error($db);
@@ -44,10 +46,12 @@ function newGoods()
     $descr = $_POST['gdescr'];
     $ord = $_POST['gord'];
     $img = $_POST['gimg'];
+    $category = $_POST['gcategory'];
 
-    $sql = "INSERT INTO goods (name, cost, descr, ord, img) VALUES ('$name', '$cost', '$descr', '$ord', '$img')";
+    $sql = "INSERT INTO goods (name, category, cost, descr, ord, img) VALUES ('$name', '$category', '$cost', '$descr', '$ord', '$img')";
 
-    if (mysqli_query($db, $sql)) {
+    if (mysqli_query($db, $sql)) 
+    {
         echo "successfully";
     } else {
         echo "error" . mysqli_error($db);
@@ -62,7 +66,8 @@ function deleteGoods()
 
     $sql = "DELETE FROM goods WHERE id = '$id' ";
 
-    if (mysqli_query($db, $sql)) {
+    if (mysqli_query($db, $sql)) 
+    {
         echo "successfully";
     } else {
         echo "error" . mysqli_error($db);

@@ -1,4 +1,5 @@
-body {
+body
+ {
     margin: 0;
     font-family: 'Montserrat', 
         sans-serif;
@@ -9,13 +10,15 @@ body {
 
 *,
 *:before,
-*:after {
+*:after 
+{
     box-sizing: border-box;
 }
 
 button,
 button:active,
-button:focus {
+button:focus 
+{
     outline: none !important;
 }
 
@@ -24,18 +27,21 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6 
+{
     margin: 0;
     text-align: center;
 }
 
-.container {
+.container 
+{
     width: 100%;
     max-width: 1455px;
     margin: 0 auto;
 }
 
-.header {
+.header
+{
     width: 100%;
     padding-top: 20px; 
     padding-bottom: 20px;
@@ -44,24 +50,27 @@ h6 {
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: rgb(232, 232, 240);
+    background-color: rgb(218, 223, 255);
     border: 3px solid;
 }
 
-.header-inner {
+.header-inner 
+{
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 50px;
 }
 
-.nav {
+.nav 
+{
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
 }
 
-.nav-link {
+.nav-link 
+{
     display: inline-block;
     vertical-align: top;
     margin: 0 20px;
@@ -71,7 +80,8 @@ h6 {
     transition: color .1s linear;
 }
 
-.nav-link:after {
+.nav-link:after 
+{
     content: "";
     display: block;
     width: 100%;
@@ -85,10 +95,12 @@ h6 {
     transition: opacity .1s linear;
 }
 
-.nav-link:hover {
+.nav-link:hover 
+{
     color: #2EE59D;
 }
 
-.nav-link:hover:after {
+.nav-link:hover:after 
+{
     opacity: 1;
 }

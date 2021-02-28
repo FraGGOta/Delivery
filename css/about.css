@@ -1,9 +1,11 @@
-.container-quality {
+.container-quality 
+{
     display: relative;
     margin: 75px;
 }
 
-.title {
+.title 
+{
     font-size: 20px;
     text-transform: uppercase;
     margin-bottom: 10px;
@@ -11,7 +13,8 @@
     font-weight: bold;
 }
 
-.paragraph {
+.paragraph 
+{
     background-color: #fff;
     width: 1200px;
     height: 100px;  
@@ -23,29 +26,35 @@
     margin-bottom: 50px;
 }
 
-.icon .data{
+.icon .data
+{
     position: absolute;
     width: 100px;
     height: 100px;
 }
 
-.icon .free{
+.icon .free
+{
     background: url("../images/free.png") center no-repeat;
 }
 
-.icon .clock {
+.icon .clock 
+{
     background: url("../images/clock.png") center no-repeat;
 }
 
-.icon .alarm {
+.icon .alarm 
+{
     background: url("../images/alarm.png") center no-repeat;
 }
 
-.icon .non-stop {
+.icon .non-stop 
+{
     background: url("../images/24.png") center no-repeat;
 }
 
-.text {
+.text 
+{
     font-size: 16px;
     text-transform: uppercase;
     text-align: center;

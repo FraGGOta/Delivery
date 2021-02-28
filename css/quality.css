@@ -1,15 +1,18 @@
-.welcome {
+.welcome 
+{
     width: 100%; 
     margin-top: 50px;
     text-align: center;
 }
 
-.welcome-title {
+.welcome-title
+{
     font-size: 20px;
     text-transform: uppercase;
 }
 
-.title {
+.title 
+{
     font-size: 22px;
     text-transform: uppercase;
     height: 300px;
@@ -21,7 +24,8 @@
         sans-serif;
 }
 
-.window {
+.window 
+{
     display: flex;
     margin-top: 50px;
     justify-content: space-around;
@@ -29,18 +33,22 @@
     align-items: center;
 }
 
-.window-inner {
+.window-inner 
+{
     position: relative;
     background-color: #333;
 }
 
-.window-cart {
+.window-cart 
+{
     background-color: #fff;
     transition: transform .2s linear;
     border: 4px double black;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
-.window-text {
+.window-text 
+{
     width: 100%;
     font-size: 18px;
     opacity: 0;
@@ -54,14 +62,17 @@
         sans-serif;
 }
 
-.window-inner:hover .window-cart {
+.window-inner:hover .window-cart 
+{
     transform: translate3d(-10px, -10px, 0);
 }
 
-.window-inner:hover .title {
+.window-inner:hover .title 
+{
     opacity: 0;
 }
 
-.window-inner:hover .window-text {
+.window-inner:hover .window-text 
+{
     opacity: 1;
 }

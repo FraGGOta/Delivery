@@ -1,4 +1,5 @@
-.intro {
+.intro 
+{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,7 +8,8 @@
     background-color: rgb(245, 245, 246);
 }
 
-.intro-title {
+.intro-title 
+{
     margin-bottom: 50px;
     font-size: 20px;
     text-transform: uppercase;
@@ -15,7 +17,8 @@
     transition: color .1s linear;
 }
 
-.slider {
+.slider 
+{
     width: 1206px;
 	height: 506px;
     margin: 0 auto;
@@ -24,14 +27,16 @@
     border: 3px solid;
 }
 
-.slide {
+.slide 
+{
     width: 1200px;
 	height: 500px;
     overflow: hidden;
     position: relative;
 }
 
-.slide img {
+.slide img 
+{
     width: 1200px;
 	height: 500px;
     position: absolute;
@@ -39,11 +44,13 @@
     transition: all ease 1s;
 } 
 
-.slide .opacity0 {
+.slide .opacity0 
+{
     opacity: 0;
 }
 
-.right {
+.right 
+{
     position: absolute;
 	outline: none;
 	font-size: 24px;
@@ -63,7 +70,8 @@
     cursor: pointer;
 }
 
-.left {
+.left 
+{
     position: absolute;
 	outline: none;
 	font-size: 24px;
@@ -83,28 +91,20 @@
     cursor: pointer;
 }
 
-.right:hover, .left:hover {
+.right:hover, .left:hover 
+{
     background: #2EE59D;
     color: white; 
 }
 
-.right:active, .left:active {
+.right:active, .left:active 
+{
     transform: translateY(-10px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-/*.footer {
-    width: 100%;
-    max-width: 1455px;
-    text-align: right;
-    margin: 0 auto;
-    padding-top: 30px;
-    font-size: 15px;
-    text-transform: uppercase;
-    font-weight: bold;
-} */
-
-.open-button {
+.open-button 
+{
     color: #524f4e;
     box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
     transition: .3s;
@@ -125,22 +125,26 @@
     width: 280px;
 }
 
-.form-container .send-email:hover, .open-button:hover {
+.form-container .send-email:hover, .open-button:hover 
+{
     background: #2EE59D;
     color: white;
 }
 
-.form-container .cancel:hover {
+.form-container .cancel:hover 
+{
     background: #448AFF;
     color: white;
 }
 
-.form-container .send-email:active, .open-button:active {
+.form-container .send-email:active, .open-button:active 
+{
     transform: translateY(-10px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.form-popup {
+.form-popup 
+{
     display: none;
     position: fixed;
     bottom: 0;
@@ -149,13 +153,15 @@
     z-index: 9;  
 }
 
-.form-container {
+.form-container
+{
     max-width: 300px;
     padding: 10px;
     background-color: rgb(255, 255, 255); 
 }
 
-.form-container input, .form-container textarea {
+.form-container input, .form-container textarea 
+{
     font-family: 'Montserrat',
         sans-serif;
     font-size: 16px;
@@ -166,7 +172,8 @@
     background: #f1f1f1;
 }
 
-.form-container .send-email {
+.form-container .send-email 
+{
     padding: 16px 20px;
     width: 100%;
     margin-bottom:10px;

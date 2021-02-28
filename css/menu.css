@@ -1,28 +1,40 @@
-.container-menu {
+.container-menu 
+{
     height: 100%;
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
-    padding-top: 50px; 
 }
 
-.mini-cart {
-    position: absolute;
+.item-menu 
+{
+    height: 100px;
+    width: 100%;
+    max-width: 1435px;
+    margin: 0 auto;
+    margin-top: 3%;
+    position: relative;
+    border: 3px solid;
+    overflow: hidden;
+    letter-spacing: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    background: rgb(232, 232, 240);
+    padding-top: 30px;
+    text-transform: uppercase;
+    font-family: 'Montserrat',
+        sans-serif;
 }
 
-.goods-out:after {
-    display: block;
-    clear: both;
-}
-
-.add-to-cart {
+.add-pizza, .add-shaurma, .add-burgers, .add-drinks 
+{
     width: 100%;
     height: 55px;
     text-decoration: none;
-
     position: relative;
     border: 1px solid;
-
     font-family: 'Montserrat',
         sans-serif;
     text-transform: uppercase;
@@ -36,53 +48,77 @@
     cursor: pointer;
 }
 
-.add-to-cart:hover {
+.add-pizza:hover, .add-shaurma:hover, .add-burgers:hover, .add-drinks:hover
+{
     background: #2EE59D;
     color: white; 
 }
 
-.add-to-cart:active {
+.add-pizza:active, .add-shaurma:active, .add-burgers:active, .add-drinks:active
+{
     transform: translateY(-10px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.imgs {
+.images 
+{
     width: 256px;
     height: 256px;
 }
 
-.cart {
-    width: 256px;
-    height: 535px;
+.cart 
+{
+    width: 262px;
+    height: 591px;
     background: #fff;
     text-align: center;
     font-size: 30px;
-    margin: 20px;
+    margin-left: 32px;
+    margin-top: 35px;
     display: inline-block;
     box-shadow: 0 18px 25px rgba(0, 0, 0, .1);
+    border: 3px solid;
 }
 
-.name {
+.cart_drink 
+{
+    width: 262px;
+    height: 491px;
+    background: #fff;
+    text-align: center;
+    font-size: 30px;
+    margin-left: 32px;
+    margin-top: 35px;
+    display: inline-block;
+    box-shadow: 0 18px 25px rgba(0, 0, 0, .1);
+    border: 3px solid;
+}
+
+.name 
+{
     font-size: 24px;
     height: 40px;
     font-family: 'Montserrat',
         sans-serif;
     overflow: hidden;
     letter-spacing: 2px;
+    font-weight: bold;
 }
 
-.descr {
+.descr 
+{
     font-size: 14px;
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     font-family: 'Montserrat',
         sans-serif;
     overflow: hidden;
     height: 100px;
-    letter-spacing: 2px;
 }
 
-.cost {
-    font-size: 14px;
+.cost 
+{
+    font-size: 16px;
     padding: 20px;
     font-family: 'Montserrat',
         sans-serif;
@@ -90,4 +126,10 @@
     overflow: hidden;
     letter-spacing: 2px;
     height: 70px;
+}
+
+.mini-cart 
+{
+    position: absolute;
+    color: red;
 }

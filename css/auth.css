@@ -1,5 +1,6 @@
 
-.shape {
+.shape 
+{
     position: absolute;
     width: 320px;
     left: 50%;
@@ -8,13 +9,15 @@
     margin-top: -75px;
 }
 
-.signin {
+.signin 
+{
     height: 90px;
     width: 300px;
     position: relative;
 }
 
-.signin input {
+.signin input 
+{
     position: relative;
     display: block;
     width: 280px;
@@ -28,7 +31,8 @@
     font-size: 12px;
 }
 
-.signin button {
+.signin button 
+{
     position: relative;
     display: block;
     width: 280px;
@@ -44,12 +48,14 @@
     cursor: pointer;
 }
 
-.signin button:hover {
+.signin button:hover 
+{
     background: #2EE59D;
     color: white;
 }
 
-.signin button:active {
+.signin button:active 
+{
     transform: translateY(-10px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }

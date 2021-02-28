@@ -9,7 +9,8 @@ $message .= "<b>E-mail: </b>".$_POST['email']."<br>";
 $message .= "<b>Телефон: </b>".$_POST['phone']."<br>"; 
 $message .= "<b>Сообщение: </b>".$_POST['message']."<br></p>";
 
-if (mail($to, $subject, $message, $headers)) {
+if (mail($to, $subject, $message, $headers)) 
+{
     echo 'successfully';
 } else {
     echo 'error';

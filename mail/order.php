@@ -13,9 +13,11 @@ $db = connect();
 $sql = "SELECT * FROM goods";
 $result = mysqli_query($db, $sql);
 
-if (mysqli_num_rows($result) > 0) {
+if (mysqli_num_rows($result) > 0) 
+{
     $goods = array();
-    while ($row = mysqli_fetch_assoc($result)) {
+    while ($row = mysqli_fetch_assoc($result)) 
+    {
         $goods[$row["id"]] = $row;
     }
 }
@@ -34,7 +36,9 @@ $cart = $_POST['cart'];
 $total = 0;
 
 $message .= '<p><b>Заказ</b></p>';
-foreach ($cart as $id => $count) {
+
+foreach ($cart as $id => $count) 
+{
     $message .= $goods[$id]['name'] . ': ';
     $message .= $count . 'шт. ';
     $message .= $count * $goods[$id]['cost'] . ' руб ';
@@ -43,7 +47,8 @@ foreach ($cart as $id => $count) {
 }
 $message .= '<b>Итого: </b>' . $total . ' руб ';
 
-if (mail($to, $subject,  $message, $headers)) {
+if (mail($to, $subject,  $message, $headers)) 
+{
     echo 'successfully';
 } else {
     echo 'error';

@@ -1,37 +1,80 @@
-function init() {
-    $.post(
-        "../admin/core.php",
+function initPizza() 
+{
+    $.post
+    (
+        "../connect/core.php",
         {
-            "action" : "init"
+            "action" : "initPizza"
         },
         showGoods
     );
 }
 
-function showGoods(data) {
+function initShaurma() 
+{
+    $.post
+    (
+        "../connect/core.php",
+        {
+            "action": "initShaurma"
+        },
+        showGoods
+    );
+}
+
+function initBurgers() 
+{
+    $.post
+    (
+        "../connect/core.php",
+        {
+            "action": "initBurgers"
+        },
+        showGoods
+    );
+}
+
+function initDrinks() 
+{
+    $.post
+    (
+        "../connect/core.php",
+        {
+            "action": "initDrinks"
+        },
+        showGoods
+    );
+}
+
+function showGoods(data) 
+{
     data = JSON.parse(data);
-    console.log(data);
     var out='<select>';
     out +='<option data-id="0">Новый товар</option>';
-    for (var id in data) {
+
+    for (var id in data) 
+    {
         out +=`<option data-id="${id}">${data[id].name}</option>`;
     }
     out +='</select>';
+
     $('.goods-out').html(out);
     $('.goods-out select').on('change', selectGoods);
 }
 
-function selectGoods() {
-
+function selectGoods() 
+{
     var id = $('.goods-out select option:selected').attr('data-id');
-    console.log(id);
-    $.post(
+
+    $.post
+    (
         "../admin/core.php",
         {
-            "action" : "selectOneGoods",
+            "action" : "selectGoods",
             "gid" : id
         },
-        function (data) {
+        function (data) 
+        {
             data = JSON.parse(data);
             $('#gname').val(data.name);
             $('#gcost').val(data.cost);
@@ -43,10 +86,14 @@ function selectGoods() {
     );
 }
 
-function deleteGoods() {
+function deleteGoods() 
+{
     var id = $('#gid').val();
-    if (id!="") {
-        $.post(
+
+    if (id!="") 
+    {
+        $.post
+        (
             "../admin/core.php",
             {
                 "action" : "deleteGoods",
@@ -55,15 +102,19 @@ function deleteGoods() {
         );
         alert('Товар удален');
     }
-    else {
+    else 
+    {
         alert('Ошибка');
     }
 }
 
-function saveToDb() {
+function saveToDb() 
+{
     var id = $('#gid').val();
-    if (id!=""){
-        $.post(
+    if (id!="")
+    {
+        $.post
+        (
             "../admin/core.php",
             {
                 "action" : "updateGoods",
@@ -77,8 +128,10 @@ function saveToDb() {
         );
         alert('Товар обновлен');
     }
-    else {
-        $.post(
+    else 
+    {
+        $.post
+        (
             "../admin/core.php",
             {
                 "action" : "newGoods",
@@ -95,8 +148,9 @@ function saveToDb() {
 }
 
 
-$(document).ready(function () {
-   init();
+$(document).ready(function () 
+{
+   initPizza();
    $('.add-to-db').on('click', saveToDb);
    $('.delete-from-db').on('click', deleteGoods);
 });

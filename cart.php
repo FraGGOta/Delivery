@@ -10,8 +10,6 @@
 
     <?php include('navigation.php'); ?>
 
-    <div class="cart-menu"></div>
-
     <form action="" class="air">
         <div class="row">Имя
             <input type="name" name="name" id="name" required>
@@ -37,8 +35,11 @@
         <button type="submit" class="send-email">Заказать</button>
     </form>
 
-    <div class="total"></div>
-    <div class="main-cart"></div>
+    <div class="total-sum"></div>
+
+    <div class="cart-container">
+        <div class="main-cart"></div>
+    </div>
 
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/cart.js"></script>
