@@ -15,7 +15,7 @@ function allGoods()
         }
         echo json_encode($out);
     } else {
-        echo "0";
+        echo "error";
     }
     mysqli_close($conn);
 }
@@ -55,7 +55,7 @@ function loadShaurma()
         }
         echo json_encode($out);
     } else {
-        echo "0";
+        echo "error";
     }
     mysqli_close($conn);
 }
@@ -75,7 +75,7 @@ function loadBurgers()
         }
         echo json_encode($out);
     } else {
-        echo "0";
+        echo "error";
     }
     mysqli_close($conn);
 }
@@ -95,7 +95,7 @@ function loadDrinks()
         }
         echo json_encode($out);
     } else {
-        echo "0";
+        echo "error";
     }
     mysqli_close($conn);
 }

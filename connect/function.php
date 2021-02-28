@@ -31,7 +31,7 @@ function initPizza()
         }
         echo json_encode($out);
     } else {
-        echo "0";
+        echo "error";
     }
     mysqli_close($conn);
 }
@@ -51,7 +51,7 @@ function initShaurma()
         }
         echo json_encode($out);
     } else {
-        echo "0";
+        echo "error";
     }
     mysqli_close($conn);
 }
@@ -71,7 +71,7 @@ function initBurgers()
         }
         echo json_encode($out);
     } else {
-        echo "0";
+        echo "error";
     }
     mysqli_close($conn);
 }
@@ -91,7 +91,7 @@ function initDrinks()
         }
         echo json_encode($out);
     } else {
-        echo "0";
+        echo "error";
     }
     mysqli_close($conn);
 }
