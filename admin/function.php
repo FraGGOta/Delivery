@@ -46,9 +46,9 @@ function newGoods()
     $descr = $_POST['gdescr'];
     $ord = $_POST['gord'];
     $img = $_POST['gimg'];
-    $category = $_POST['gcategory'];
+    $id_category = $_POST['gcategory'];
 
-    $sql = "INSERT INTO goods (name, category, cost, descr, ord, img) VALUES ('$name', '$category', '$cost', '$descr', '$ord', '$img')";
+    $sql = "INSERT INTO goods (name, id_category, cost, descr, ord, img) VALUES ('$name', '$id_category', '$cost', '$descr', '$ord', '$img')";
 
     if (mysqli_query($db, $sql)) 
     {

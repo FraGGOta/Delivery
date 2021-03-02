@@ -48,23 +48,27 @@ function initDrinks()
 
 function showGoods(data) 
 {
+    clearGoods();
+
     data = JSON.parse(data);
-    var out='<select>';
-    out +='<option data-id="0">Новый товар</option>';
+
+    var out = '';
+    out += `<option data-id="0">Новый товар</option>`;
 
     for (var id in data) 
     {
-        out +=`<option data-id="${id}">${data[id].name}</option>`;
+        out += `<option data-id = "${id}"> ${data[id].name} </option>`;
     }
-    out +='</select>';
 
-    $('.goods-out').html(out);
-    $('.goods-out select').on('change', selectGoods);
+    $('.item').html(out);
+    $('.out-goods select').on('change', selectGoods);
 }
 
 function selectGoods() 
 {
-    var id = $('.goods-out select option:selected').attr('data-id');
+    clearGoods();
+
+    var id = $('.out-goods select option:selected').attr('data-id');
 
     $.post
     (
@@ -90,7 +94,7 @@ function deleteGoods()
 {
     var id = $('#gid').val();
 
-    if (id!="") 
+    if (id != "") 
     {
         $.post
         (
@@ -100,18 +104,51 @@ function deleteGoods()
                 "id" : id
             }
         );
-        alert('Товар удален');
+        alert('Запись удалена');
+        clearGoods();
+        initPizza();
     }
-    else 
-    {
+    else {
         alert('Ошибка');
     }
+}
+
+function changeCategory() 
+{
+    $('.category-body select').on('change', function () 
+    {
+        if ($("option:selected", this).attr('data-id') == '1') 
+        {
+            clearGoods();
+            initPizza();
+        } else if ($("option:selected", this).attr('data-id') == '2') {
+            clearGoods();
+            initShaurma();
+        } else if ($("option:selected", this).attr('data-id') == '3') {
+            clearGoods();
+            initBurgers();
+        } else if ($("option:selected", this).attr('data-id') == '4') {
+            clearGoods();
+            initDrinks();
+        }
+    });
+}
+
+function clearGoods() 
+{
+    $('#gid').val('');
+    $('#gname').val('');
+    $('#gcost').val('');
+    $('#gdescr').val('');
+    $('#gimg').val('');
+    $('#gord').val('');
 }
 
 function saveToDb() 
 {
     var id = $('#gid').val();
-    if (id!="")
+
+    if (id != "")
     {
         $.post
         (
@@ -123,13 +160,12 @@ function saveToDb()
                 "gcost" : $('#gcost').val(),
                 "gdescr" : $('#gdescr').val(),
                 "gord" : $('#gord').val(),
-                "gimg" : $('#gimg').val(),
+                "gimg" : $('#gimg').val()
             }
         );
         alert('Товар обновлен');
-    }
-    else 
-    {
+        initPizza;
+    } else {
         $.post
         (
             "../admin/core.php",
@@ -140,17 +176,20 @@ function saveToDb()
                 "gcost" : $('#gcost').val(),
                 "gdescr" : $('#gdescr').val(),
                 "gord" : $('#gord').val(),
-                "gimg" : $('#gimg').val()
+                "gimg" : $('#gimg').val(),
+                "gcategory": $('.category option:selected').attr('data-id'),
             }
-        );  
+        );
         alert('Товар добавлен');
+        initPizza;
     }
 }
 
-
 $(document).ready(function () 
 {
-   initPizza();
-   $('.add-to-db').on('click', saveToDb);
-   $('.delete-from-db').on('click', deleteGoods);
+    initPizza();
+    changeCategory();
+    $('.add-to-db').on('click', saveToDb);
+    $('.category option:selected').val();
+    $('.delete-from-db').on('click', deleteGoods);
 });

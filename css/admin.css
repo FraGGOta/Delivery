@@ -14,7 +14,9 @@
     height: 50px;
     top: -2px;
     padding: 0 0 0 20px;
-    font-size: 14px;
+    font-size: 16px;
+    font-family: 'Montserrat',
+        sans-serif;
 }
 
 .signin textarea 
@@ -25,7 +27,9 @@
     height: 150px;
     top: -2px;
     padding: 18px;
-    font-size: 14px;
+    font-size: 16px;
+    font-family: 'Montserrat',
+        sans-serif;
 }
 
 .signin button 
@@ -36,7 +40,7 @@
     height: 50px;
     font-family: 'Montserrat',
         sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
@@ -63,10 +67,9 @@
     text-decoration: none;
     font-family: 'Montserrat',
         sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
-    font-weight: bold;
     position: relative;
     left: 39%;
 } 
@@ -74,4 +77,25 @@
 .link:hover 
 {
     color: #2EE59D;
+}
+
+.points 
+{
+    font-size: 16px;
+    font-family: 'Montserrat',
+        sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.form-control 
+{
+    font-size: 16px;
+    font-family: 'Montserrat',
+        sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    width: 250px;
+    height: 30px;
 }

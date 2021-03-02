@@ -42,7 +42,7 @@ function init()
 function outPizza(data) 
 {
     data = JSON.parse(data);
-    var out='';
+    var out = '';
 
     for (var id in data) 
     {
@@ -63,6 +63,7 @@ function outShaurma(data)
 {
     data = JSON.parse(data);
     var out = '';
+
     for (var id in data) 
     {
         out += '<div class="cart">';
@@ -82,6 +83,7 @@ function outBurgers(data)
 {
     data = JSON.parse(data);
     var out = '';
+
     for (var id in data) 
     {
         out += '<div class="cart">';
@@ -101,6 +103,7 @@ function outDrinks(data)
 {
     data = JSON.parse(data);
     var out = '';
+
     for (var id in data) 
     {
         out += '<div class="cart_drink">';
@@ -139,6 +142,7 @@ function saveCart()
 function showMiniCart() 
 {
     count = 0;
+    
     for (var key in cart) 
     {
         count += cart[key];
