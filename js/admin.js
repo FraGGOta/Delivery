@@ -108,7 +108,8 @@ function deleteGoods()
         clearGoods();
         initPizza();
     }
-    else {
+    else 
+    {
         alert('Ошибка');
     }
 }
@@ -121,13 +122,19 @@ function changeCategory()
         {
             clearGoods();
             initPizza();
-        } else if ($("option:selected", this).attr('data-id') == '2') {
+        } 
+        else if ($("option:selected", this).attr('data-id') == '2') 
+        {
             clearGoods();
             initShaurma();
-        } else if ($("option:selected", this).attr('data-id') == '3') {
+        } 
+        else if ($("option:selected", this).attr('data-id') == '3') 
+        {
             clearGoods();
             initBurgers();
-        } else if ($("option:selected", this).attr('data-id') == '4') {
+        } 
+        else if ($("option:selected", this).attr('data-id') == '4') 
+        {
             clearGoods();
             initDrinks();
         }
@@ -165,7 +172,9 @@ function saveToDb()
         );
         alert('Товар обновлен');
         initPizza;
-    } else {
+    } 
+    else 
+    {
         $.post
         (
             "../admin/core.php",

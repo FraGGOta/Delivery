@@ -1,14 +1,18 @@
-var cart = {}; 
+var cart = {};
+
+function getRandomInt(min, max) 
+{
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 
 function loadCart() 
 {
     if (localStorage.getItem('cart')) 
     {
         cart = JSON.parse(localStorage.getItem('cart'));
-            showCart();  
+        showCart();
     }
-    else 
-    {
+    else {
         $('.main-cart').html('Корзина пуста');
     }
 }
@@ -20,41 +24,40 @@ function showCart()
         $('.total-sum').html(`Итого: ${0} рублей`);
         $('.main-cart').html('Корзина пуста');
     }
-    else 
-    {
+    else {
         $.post
-        (
-            "dataBase/core.php",
-            {
-                "action": "allGoods"
-            },
+            (
+                "dataBase/core.php",
+                {
+                    "action": "allGoods"
+                },
 
-        function(data) 
-        {
-            var goods = JSON.parse(data);
-            var out = '';
-            var total = 0;
+                function (data) 
+                {
+                    var goods = JSON.parse(data);
+                    var out = '';
+                    var total = 0;
 
-            for (var id in cart) 
-            {   
-                out += '<div class="main-cart">';
-                out += `<img class="images" src = "images\\${goods[id].img}">`;
-                out += `<p>${goods[id].name}</p>`;
-                out += `<button data-id="${id}" class="minus-goods">-</button>&nbsp`;
-                out += `${cart[id]}`;
-                out += `&nbsp<button data-id="${id}" class="plus-goods">+</button>`;
-                out += `<div>${goods[id].cost * cart[id]} РУБ </div>`;
-                out += `<button data-id="${id}" class="delete-goods">x</button>`;
-                total += goods[id].cost * cart[id];
-                out += '</div>';
-            }
+                    for (var id in cart) 
+                    {
+                        out += '<div class="main-cart">';
+                        out += `<img class="images" src = "images\\${goods[id].img}">`;
+                        out += `<p>${goods[id].name}</p>`;
+                        out += `<button data-id="${id}" class="minus-goods">-</button>&nbsp`;
+                        out += `${cart[id]}`;
+                        out += `&nbsp<button data-id="${id}" class="plus-goods">+</button>`;
+                        out += `<div>${goods[id].cost * cart[id]} РУБ </div>`;
+                        out += `<button data-id="${id}" class="delete-goods">x</button>`;
+                        total += goods[id].cost * cart[id];
+                        out += '</div>';
+                    }
 
-            $('.main-cart').html(out);
-            $('.plus-goods').on('click', plusGoods);
-            $('.minus-goods').on('click', minusGoods);
-            $('.delete-goods').on('click', deleteGoods);
-            $('.total-sum').html(`Итого: ${total} рублей`);
-        });
+                    $('.main-cart').html(out);
+                    $('.plus-goods').on('click', plusGoods);
+                    $('.minus-goods').on('click', minusGoods);
+                    $('.delete-goods').on('click', deleteGoods);
+                    $('.total-sum').html(`Итого: ${total} рублей`);
+                });
     }
 }
 
@@ -64,7 +67,7 @@ function plusGoods()
     cart[id]++;
 
     saveCart();
-    showCart();   
+    showCart();
 }
 
 function minusGoods() 
@@ -75,12 +78,13 @@ function minusGoods()
     {
         delete cart[id];
     }
-    else {
+    else 
+    {
         cart[id]--;
     }
 
     saveCart();
-    showCart();   
+    showCart();
 }
 
 function deleteGoods() 
@@ -104,8 +108,8 @@ function isEmpty(object)
     return false;
 }
 
- function isCheck() 
- {
+function isCheck() 
+{
     var mail = document.getElementById("mail").value;
     var number = document.getElementById("number").value;
     var name = document.getElementById("name").value;
@@ -117,47 +121,83 @@ function isEmpty(object)
     var address_reg = /[\p{Alpha}\p{M}\p{Nd}\p{Pc}\p{Join_C}]/gu;
 
     if (mail_reg.test(mail) && number_reg.test(number) && name_reg.test(name) && address_reg.test(address)) return true;
-        return false;
+    return false;
+}
+
+function refreshCaptcha() 
+{
+    $("img#captcha-image").attr("src", "/captcha.php?r=" + getRandomInt(100000000, 400000000));
 }
 
 function sendEmail() 
 {
+    event.preventDefault();
+
     var name = $('#name').val();
     var address = $('#address').val();
     var number = $('#number').val();
     var mail = $('#mail').val();
+    var captcha = $('#captcha').val();
 
     if (isCheck()) 
     {
         if (isEmpty(cart)) 
         {
-            $.post
-            (
-                "mail/order.php",
+            $.ajax(
+            {
+                method: "POST",
+                url: "/mail/order.php",
+                data: {
+                    "name": name,
+                    "address": address,
+                    "number": number,
+                    "mail": mail,
+                    "cart": cart,
+                    "captcha": captcha
+                },
+                success: function (response) 
                 {
-                    "name" : name,
-                    "address" : address,
-                    "number" : number,
-                    "mail" : mail,
-                    "cart" : cart
+                    if (response == 'successfully') 
+                    {
+                        alert('Заказ отправлен');
+                        localStorage.clear();
+                        window.location = "/";
+                    } 
+                    else if (response == 'error') 
+                    {
+                        alert('Ошибка! Проверьте поля с данными');
+                    } 
+                    else if (response == 'captcha') 
+                    {
+                        alert('Неверный код с капчи');
+                    } 
+                    else 
+                    {
+                        alert('Неизвестная ошибка');
+                    }
+                },
+                error: function (request, status, error) 
+                {
+                    alert('Не удалось выполнить запрос')
                 }
-            );
-            alert('Заказ отправлен');
-            localStorage.clear();
-        } 
+            });
+        }
         else 
         {
             alert('Корзина пуста');
-        } 
-    } 
+        }
+    }
     else 
     {
         alert('Заполните поля верно');
     }
+
+    refreshCaptcha();
 }
 
 $(document).ready(function () 
 {
     loadCart();
+    $('.refresh-captcha').on('click', refreshCaptcha);
     $('.send-email').on('click', sendEmail);
 });
