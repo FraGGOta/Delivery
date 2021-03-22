@@ -11,15 +11,18 @@
     <?php include('navigation.php'); ?>
 
     <form action="" class="air">
+
         <div class="row">Имя
             <input type="name" name="name" id="name" required>
         </div>
+
         <div class="row">Телефон
             <div class="row-icon">
                 <i class="data telephone"></i>
                 <input pattern="^\+7\d{3}\d{7}$" value="+7" maxlength="12" id="number" required>
             </div>
         </div>
+        
         <div class="row">Почта
             <div class="row-icon">
                 <i class="data email"></i>

@@ -1,61 +1,124 @@
-
-.shape 
+.air-auth
 {
-    position: absolute;
-    width: 320px;
-    left: 50%;
-    margin-left: -160px;
-    top: 50%;
-    margin-top: -75px;
-}
-
-.signin 
-{
-    height: 90px;
-    width: 300px;
-    position: relative;
-}
-
-.signin input 
-{
-    position: relative;
-    display: block;
-    width: 280px;
-    height: 45px;
-    border: 0;
-    outline: 0;
-    padding: 0 0 0 20px;
-    font-weight: 700;
+    font-size: 20px;
+    max-width: 350px;
+    margin: 200px auto 0;
     font-family: 'Montserrat',
         sans-serif;
-    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
 }
 
-.signin button 
+.air-reg 
 {
-    position: relative;
-    display: block;
-    width: 280px;
-    height: 45px;
+    font-size: 20px;
+    max-width: 350px;
+    margin: 100px auto 0;
     font-family: 'Montserrat',
         sans-serif;
-    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.row 
+{
+    font-family: 'Montserrat',
+        sans-serif;
+    font-size: 18px;
+    width: 100%;
+    line-height: 40px;
     font-weight: bold;
     text-transform: uppercase;
-    text-decoration: none;
-    color: #524f4e;
-    outline: 0;  
-    cursor: pointer;
 }
 
-.signin button:hover 
+.row input
+{
+    font-family: 'Montserrat',
+        sans-serif;
+    font-size: 18px;
+    width: 100%;
+    line-height: 40px;
+}
+
+
+.login-btn, .register-btn
+{
+    width: 100%;
+    line-height: 50px;
+    text-decoration: none;
+    font-family: 'Montserrat',
+        sans-serif;
+    text-transform: uppercase;
+    overflow: hidden;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #524f4e;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .3s;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.login-btn:hover, .register-btn:hover
 {
     background: #2EE59D;
     color: white;
 }
 
-.signin button:active 
+.login-btn:active, .register-btn:active
 {
     transform: translateY(-10px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.msg 
+{
+    text-transform: uppercase;
+    border: 2px solid #df2443;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: bold;
+    width: 350px;
+    height: 45px;
+    padding-top: 10px;
+    font-size: 12px;
+    margin-top: 40px;
+}
+
+.none 
+{
+    display: none;
+}
+
+.error 
+{
+    border-bottom: 3px solid #df2443;
+}
+
+.jump-auth
+{
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Montserrat',
+        sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding-left: 10%;
+}
+
+.jump-reg
+{
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Montserrat',
+        sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding-left: 20%;
 }

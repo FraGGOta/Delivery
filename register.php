@@ -7,19 +7,31 @@
 
     <?php include('navigation.php'); ?>
 
-    <form class="air-auth">
+    <form class="air-reg">
+
+        <div class="row">Имя
+            <input type="text" name="name">
+        </div>
 
         <div class="row">Логин
             <input type="text" name="login">
+        </div>
+
+        <div class="row">Почта
+            <input type="email" name="email">
         </div>
 
         <div class="row">Пароль
             <input type="password" name="password">
         </div>
 
-        <button type="submit" class="login-btn">Войти</button>
+        <div class="row">Подтвердите пароль
+            <input type="password" name="password_confirm">
+        </div>
 
-        <a class="jump-auth" href="/register.php">Зарегистрироваться</a>
+        <button type="submit" class="register-btn">Зарегистрироваться</button>
+
+        <a class="jump-reg" href="/auth.php">Авторизоваться</a>
 
         <div class="msg none"></div>
 

@@ -155,13 +155,14 @@ function sendEmail()
                     "cart": cart,
                     "captcha": captcha
                 },
+
                 success: function (response) 
                 {
                     if (response == 'successfully') 
                     {
                         alert('Заказ отправлен');
                         localStorage.clear();
-                        window.location = "/";
+                        document.location.href = '/';
                     } 
                     else if (response == 'error') 
                     {
