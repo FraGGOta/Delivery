@@ -21,7 +21,7 @@ $('.login-btn').click(function (e)
 
             if (data.status) 
             {
-                document.location.href = '/menu.php';
+                document.location.href = '/profile.php';
             } 
             else 
             {
@@ -73,7 +73,7 @@ $('.register-btn').click(function (e)
         {
             if (data.status) 
             {
-                document.location.href = '/auth.php';
+                document.location.href = '/menu.php';
             } 
             else 
             {

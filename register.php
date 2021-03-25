@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="css/auth.css">
 </head>
 
+<body>
+
     <?php include('navigation.php'); ?>
 
     <form class="air-reg">
