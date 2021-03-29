@@ -1,97 +1,114 @@
 <?php
 
-$action = $_POST['action'];
-$host = "localhost";
-$user = "u99622_delivery";
-$pass = "delivery";
-$name = "u99622_delivery";
+    $action = isset($_POST['action']) ? $_POST['action'] : '';
+    $host = "localhost";
+    $user = "u99622_delivery";
+    $pass = "delivery";
+    $name = "u99622_delivery";
 
-function connect()
-{
-    $db = mysqli_connect("localhost", "u99622_delivery", "delivery", "u99622_delivery");
-    if (!$db) 
+    function connect()
     {
-        die("connection failed: " . mysqli_connect_error());
-    }
-    return $db;
-}
+        global $host, $user, $pass, $name;
+        $db = mysqli_connect($host, $user, $pass, $name);
 
-function initPizza()
-{
-    $conn = connect();
-    $sql = "SELECT *  FROM goods WHERE id_category = '1' ";
-    $result = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) > 0) 
-    {
-        $out = array();
-        while ($row = mysqli_fetch_assoc($result)) 
+        if (!$db) 
         {
-            $out[$row["id"]] = $row;
+            die("connection failed: " . mysqli_connect_error());
         }
-        echo json_encode($out);
-    } else {
-        echo "error";
+
+        return $db;
     }
-    mysqli_close($conn);
-}
 
-function initShaurma()
-{
-    $conn = connect();
-    $sql = "SELECT *  FROM goods WHERE id_category = '2' ";
-    $result = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) > 0) 
+    function initPizza()
     {
-        $out = array();
-        while ($row = mysqli_fetch_assoc($result)) 
+        $conn = connect();
+        $sql = "SELECT *  FROM goods WHERE id_category = '1' ";
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) > 0) 
         {
-            $out[$row["id"]] = $row;
+            $out = array();
+            while ($row = mysqli_fetch_assoc($result)) 
+            {
+                $out[$row["id"]] = $row;
+            }
+            echo json_encode($out);
+        } 
+        else 
+        {
+            echo "error";
         }
-        echo json_encode($out);
-    } else {
-        echo "error";
+
+        mysqli_close($conn);
     }
-    mysqli_close($conn);
-}
 
-function initBurgers()
-{
-    $conn = connect();
-    $sql = "SELECT *  FROM goods WHERE id_category = '3' ";
-    $result = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) > 0) 
+    function initShaurma()
     {
-        $out = array();
-        while ($row = mysqli_fetch_assoc($result)) 
+        $conn = connect();
+        $sql = "SELECT *  FROM goods WHERE id_category = '2' ";
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) > 0) 
         {
-            $out[$row["id"]] = $row;
+            $out = array();
+            while ($row = mysqli_fetch_assoc($result)) 
+            {
+                $out[$row["id"]] = $row;
+            }
+            echo json_encode($out);
+        } 
+        else 
+        {
+            echo "error";
         }
-        echo json_encode($out);
-    } else {
-        echo "error";
+
+        mysqli_close($conn);
     }
-    mysqli_close($conn);
-}
 
-function initDrinks()
-{
-    $conn = connect();
-    $sql = "SELECT *  FROM goods WHERE id_category = '4' ";
-    $result = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) > 0) 
+    function initBurgers()
     {
-        $out = array();
-        while ($row = mysqli_fetch_assoc($result)) 
+        $conn = connect();
+        $sql = "SELECT *  FROM goods WHERE id_category = '3' ";
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) > 0) 
         {
-            $out[$row["id"]] = $row;
+            $out = array();
+            while ($row = mysqli_fetch_assoc($result)) 
+            {
+                $out[$row["id"]] = $row;
+            }
+            echo json_encode($out);
+        } 
+        else 
+        {
+            echo "error";
         }
-        echo json_encode($out);
-    } else {
-        echo "error";
+
+        mysqli_close($conn);
     }
-    mysqli_close($conn);
-}
+
+    function initDrinks()
+    {
+        $conn = connect();
+        $sql = "SELECT *  FROM goods WHERE id_category = '4' ";
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) > 0) 
+        {
+            $out = array();
+            while ($row = mysqli_fetch_assoc($result)) 
+            {
+                $out[$row["id"]] = $row;
+            }
+            echo json_encode($out);
+        } 
+        else 
+        {
+            echo "error";
+        }
+
+        mysqli_close($conn);
+    }
+
+?>

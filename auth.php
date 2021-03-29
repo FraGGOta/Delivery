@@ -1,8 +1,27 @@
+<?php
+
+    @session_start();
+
+    if (isset($_SESSION['user']['type']) && $_SESSION['user']['type'] == 'admin') 
+    {
+        header('Location: /admin.php');
+    }
+
+    if (isset($_SESSION['user']['type']) && $_SESSION['user']['type'] == 'user') 
+    {
+        header('Location: /profile.php');
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
+    
 <head>
+
     <?php include('head.php'); ?>
     <link rel="stylesheet" href="css/auth.css">
+
 </head>
 
     <?php include('navigation.php'); ?>

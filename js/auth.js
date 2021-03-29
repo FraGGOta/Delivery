@@ -7,12 +7,13 @@ $('.login-btn').click(function (e)
     let login = $('input[name="login"]').val(),
         password = $('input[name="password"]').val();
 
-    $.ajax(
-    {
+    $.ajax
+    ({
         url: 'auth/signin.php',
         type: 'POST',
         dataType: 'json',
-        data: {
+        data: 
+        {
             login: login,
             password: password
         },
@@ -21,8 +22,11 @@ $('.login-btn').click(function (e)
 
             if (data.status) 
             {
-                document.location.href = '/profile.php';
-            } 
+                if (data.type == 'admin')
+                    document.location.href = '/admin.php';
+                else
+                    document.location.href = '/profile.php';
+            }
             else 
             {
                 if (data.type === 1) 
@@ -35,7 +39,6 @@ $('.login-btn').click(function (e)
 
                 $('.msg').removeClass('none').text(data.message);
             }
-
         }
     });
 
@@ -54,14 +57,14 @@ $('.register-btn').click(function (e)
         password_confirm = $('input[name="password_confirm"]').val();
 
     let formData = new FormData();
-        formData.append('login', login);
-        formData.append('password', password);
-        formData.append('password_confirm', password_confirm);
-        formData.append('name', name);
-        formData.append('email', email);
+    formData.append('login', login);
+    formData.append('password', password);
+    formData.append('password_confirm', password_confirm);
+    formData.append('name', name);
+    formData.append('email', email);
 
-    $.ajax(
-    {
+    $.ajax
+    ({
         url: 'auth/signup.php',
         type: 'POST',
         dataType: 'json',
@@ -73,8 +76,8 @@ $('.register-btn').click(function (e)
         {
             if (data.status) 
             {
-                document.location.href = '/menu.php';
-            } 
+                document.location.href = '/auth.php';
+            }
             else 
             {
                 if (data.type === 1) 
@@ -86,10 +89,7 @@ $('.register-btn').click(function (e)
                 }
 
                 $('.msg').removeClass('none').text(data.message);
-
             }
-
         }
     });
-
 });

@@ -3,40 +3,40 @@ var cart = {};
 function init() 
 {
     $.post
-        (
-            "dataBase/core.php",
-            {
-                "action": "loadPizza"
-            },
-            outPizza
-        );
+    (
+        "dataBase/core.php",
+        {
+            "action": "loadPizza"
+        },
+        outPizza
+    );
 
     $.post
-        (
-            "dataBase/core.php",
-            {
-                "action": "loadShaurma"
-            },
-            outShaurma
-        );
+    (
+        "dataBase/core.php",
+        {
+            "action": "loadShaurma"
+        },
+        outShaurma
+    );
 
     $.post
-        (
-            "dataBase/core.php",
-            {
-                "action": "loadBurgers"
-            },
-            outBurgers
-        );
+    (
+        "dataBase/core.php",
+        {
+            "action": "loadBurgers"
+        },
+        outBurgers
+    );
 
     $.post
-        (
-            "dataBase/core.php",
-            {
-                "action": "loadDrinks"
-            },
-            outDrinks
-        );
+    (
+        "dataBase/core.php",
+        {
+            "action": "loadDrinks"
+        },
+        outDrinks
+    );
 }
 
 function outPizza(data) 
@@ -138,19 +138,22 @@ function addCart()
     if (imgtodrag) 
     {
         var imgclone = imgtodrag.clone()
-            .offset({
+            .offset
+            ({
                 top: imgtodrag.offset().top,
                 left: imgtodrag.offset().left
             })
-            .css({
+            .css
+            ({
                 'opacity': '0.5',
                 'position': 'absolute',
-                'height': '150px', 
-                'width': '150px', 
+                'height': '150px',
+                'width': '150px',
                 'z-index': '1000000'
             })
             .appendTo($('body'))
-            .animate({
+            .animate
+            ({
                 'top': card_animation.offset().top + 10,
                 'left': card_animation.offset().left + 10,
                 'width': 75,
@@ -159,17 +162,17 @@ function addCart()
 
         setTimeout(function () 
         {
-            card_animation.effect("shake", 
-            {
-                times: 2
-            }, 200);
+            card_animation.effect("shake",
+                {
+                    times: 2
+                }, 200);
         }, 1500);
 
-        imgclone.animate({
+        imgclone.animate
+        ({
             'width': 0,
             'height': 0
-        }, function () 
-        {
+        }, function () {
             $(this).detach()
         });
     }
@@ -209,7 +212,6 @@ $(document).ready(function ()
     init();
     loadCart();
 });
-
 
 
 

@@ -1,15 +1,42 @@
+<?php
+
+    @session_start();
+
+    if (!isset($_SESSION['user'])) 
+    {
+        header('Location: /');
+    }
+
+    if (isset($_SESSION['user']['type']) && $_SESSION['user']['type'] != 'admin') 
+    {
+        header('Location: /profile.php');
+    }
+
+    $get_do = isset($_GET['do']) ? $_GET['do'] : '';
+
+    if ($get_do == 'logout')  
+    {
+        unset($_SESSION['user']);
+        header('Location: /auth.php');
+    }
+    
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
 <head>
+
     <?php include('head.php'); ?>
     <link rel="stylesheet" href="css/admin.css">
+
 </head>
 
 <body>
     <?php include('navigation.php');  ?>
 
     <div class="shape">
+        
         <form class="signin">
 
             <div class="points"> Выберите категорию: </div>
@@ -54,32 +81,15 @@
             <button class="add-to-db">Обновить/Добавить</button>
             <button class="delete-from-db">Удалить</button>
 
-            <a class="link" href="admin.php?do=logout">Выход</a>
+            <div class="text">
+                <a href="auth/logout.php" class="logout">Выход</a>
+            </div>    
 
         </form>
     </div>
-
-    <?php
-
-        session_start();
-
-        if ($_GET['do'] == 'logout') 
-        {
-            unset($_SESSION['admin']);
-            session_destroy();
-        }
-
-        if ($_SESSION['admin'] != "admin") 
-        {
-            header("Location: auth.php");
-            exit;
-        }
-    
-    ?>
 
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/admin.js"></script>
 
 </body>
-
 </html>

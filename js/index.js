@@ -17,13 +17,14 @@ slider();
 
 document.querySelector('.right').onclick = function () 
 {
- 	if (current - 1 == - 1) 
+	if (current - 1 == - 1) 
 	{
 		current = images.length - 1;
- 	}
- 	else {
- 		current--;
- 	}
+	}
+	else 
+	{
+		current--;
+	}
 
 	slider();
 };
@@ -44,9 +45,9 @@ document.querySelector('.left').onclick = function ()
 
 function autoSlider() 
 {
-	timer = setTimeout(function() 
+	timer = setTimeout(function () 
 	{
-		for (let i = 0; i < images.length; i++) 
+		for (let i = 0; i < images.length; i++)
 		{
 			images[i].classList.add('opacity0');
 		}
@@ -63,6 +64,7 @@ function autoSlider()
 
 		slider();
 		autoSlider();
+
 	}, 5000);
 }
 

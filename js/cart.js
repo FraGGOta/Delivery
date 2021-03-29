@@ -12,8 +12,9 @@ function loadCart()
         cart = JSON.parse(localStorage.getItem('cart'));
         showCart();
     }
-    else {
-        $('.main-cart').html('Корзина пуста');
+    else 
+    {
+        $('.main-cart').html('Добавьте что-нибудь из меню');
     }
 }
 
@@ -22,42 +23,44 @@ function showCart()
     if (!isEmpty(cart)) 
     {
         $('.total-sum').html(`Итого: ${0} рублей`);
-        $('.main-cart').html('Корзина пуста');
+        $('.main-cart').html('Добавьте что-нибудь из меню');
     }
-    else {
+    else 
+    {
         $.post
-            (
-                "dataBase/core.php",
+        (
+            "dataBase/core.php",
+            {
+                "action": "allGoods"
+            },
+
+            function (data) 
+            {
+                var goods = JSON.parse(data);
+                var out = '';
+                var total = 0;
+
+                for (var id in cart) 
                 {
-                    "action": "allGoods"
-                },
+                    out += '<div class="main-cart">';
+                    out += `<img class="images" src = "images\\${goods[id].img}">`;
+                    out += `<p>${goods[id].name}</p>`;
+                    out += `<button data-id="${id}" class="minus-goods">-</button>&nbsp`;
+                    out += `${cart[id]}`;
+                    out += `&nbsp<button data-id="${id}" class="plus-goods">+</button>`;
+                    out += `<div>${goods[id].cost * cart[id]} РУБ </div>`;
+                    out += `<button data-id="${id}" class="delete-goods">x</button>`;
+                    total += goods[id].cost * cart[id];
+                    out += '</div>';
+                }
 
-                function (data) 
-                {
-                    var goods = JSON.parse(data);
-                    var out = '';
-                    var total = 0;
-
-                    for (var id in cart) 
-                    {
-                        out += '<div class="main-cart">';
-                        out += `<img class="images" src = "images\\${goods[id].img}">`;
-                        out += `<p>${goods[id].name}</p>`;
-                        out += `<button data-id="${id}" class="minus-goods">-</button>&nbsp`;
-                        out += `${cart[id]}`;
-                        out += `&nbsp<button data-id="${id}" class="plus-goods">+</button>`;
-                        out += `<div>${goods[id].cost * cart[id]} РУБ </div>`;
-                        out += `<button data-id="${id}" class="delete-goods">x</button>`;
-                        total += goods[id].cost * cart[id];
-                        out += '</div>';
-                    }
-
-                    $('.main-cart').html(out);
-                    $('.plus-goods').on('click', plusGoods);
-                    $('.minus-goods').on('click', minusGoods);
-                    $('.delete-goods').on('click', deleteGoods);
-                    $('.total-sum').html(`Итого: ${total} рублей`);
-                });
+                $('.main-cart').html(out);
+                $('.plus-goods').on('click', plusGoods);
+                $('.minus-goods').on('click', minusGoods);
+                $('.delete-goods').on('click', deleteGoods);
+                $('.total-sum').html(`Итого: ${total} рублей`);
+            }
+        );
     }
 }
 
@@ -121,7 +124,7 @@ function isCheck()
     var address_reg = /[\p{Alpha}\p{M}\p{Nd}\p{Pc}\p{Join_C}]/gu;
 
     if (mail_reg.test(mail) && number_reg.test(number) && name_reg.test(name) && address_reg.test(address)) return true;
-    return false;
+        return false;
 }
 
 function refreshCaptcha() 
@@ -143,11 +146,12 @@ function sendEmail()
     {
         if (isEmpty(cart)) 
         {
-            $.ajax(
-            {
+            $.ajax
+            ({
                 method: "POST",
                 url: "/mail/order.php",
-                data: {
+                data: 
+                {
                     "name": name,
                     "address": address,
                     "number": number,
@@ -158,39 +162,40 @@ function sendEmail()
 
                 success: function (response) 
                 {
+                        
                     if (response == 'successfully') 
                     {
-                        alert('Заказ отправлен');
+                        $('.msg').removeClass('none').text('Заказ отправлен');
                         localStorage.clear();
                         document.location.href = '/';
-                    } 
+                    }
                     else if (response == 'error') 
                     {
-                        alert('Ошибка! Проверьте поля с данными');
-                    } 
+                        $('.msg').removeClass('none').text('Ошибка! Проверьте поля с данными');
+                    }
                     else if (response == 'captcha') 
                     {
-                        alert('Неверный код с капчи');
-                    } 
+                        $('.msg').removeClass('none').text('Неверный код с капчи');
+                    }
                     else 
                     {
-                        alert('Неизвестная ошибка');
+                        $('.msg').removeClass('none').text('Неизвестная ошибка');
                     }
                 },
                 error: function (request, status, error) 
                 {
-                    alert('Не удалось выполнить запрос')
+                    $('.msg').removeClass('none').text('Не удалось выполнить запрос');
                 }
             });
         }
         else 
         {
-            alert('Корзина пуста');
+            $('.msg').removeClass('none').text('Корзина пуста');
         }
     }
     else 
     {
-        alert('Заполните поля верно');
+        $('.msg').removeClass('none').text('Заполните поля верно');
     }
 
     refreshCaptcha();

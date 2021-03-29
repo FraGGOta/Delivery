@@ -1,0 +1,49 @@
+.data
+{
+    font-size: 18px;
+    font-family: 'Montserrat',
+        sans-serif;
+    margin: 50px;
+}
+
+.name
+{
+    width: 1200px;
+    margin-left: 80px;
+}
+
+.title
+{
+    width: 100%; 
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Montserrat',
+        sans-serif;
+}
+
+.logout
+{
+    font-family: 'Montserrat',
+        sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
+
+.logout:hover 
+{
+    color: #2EE59D;
+}
+
+.history
+{
+    font-family: 'Montserrat',
+        sans-serif;
+    font-size: 18px;
+    margin: 50px;
+}

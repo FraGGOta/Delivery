@@ -2,8 +2,10 @@
 <html lang="ru">
     
 <head>
+
     <?php include('head.php'); ?>
     <link rel="stylesheet" href="css/cart.css">
+    
 </head>
 
 <body>
@@ -35,15 +37,18 @@
         </div>
 
         <div class="row" style="">Введите код
-            <br><img src="/captcha.php?r=<?=mt_rand();?>" id="captcha-image">&nbsp;<button type="button" class="refresh-captcha">Обновить</button>
+            <br><img src="/captcha.php?r=<?=mt_rand();?>" id="captcha-image">&nbsp;
+            <button type="button" class="refresh-captcha">Обновить</button>
         </div>
 
         <div class="row">
-          <input type="text" name="captcha" id="captcha" autocomplete="off" required>
+            <input type="text" name="captcha" id="captcha" autocomplete="off" required>
         </div>
 
         <i class="data send"></i>
         <button type="submit" class="send-email">Заказать</button>
+        
+        <div class="msg none"></div>
     </form>
 
     <div class="total-sum"></div>

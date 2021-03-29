@@ -2,8 +2,10 @@
 <html lang="ru">
 
 <head>
+
 	<?php include('head.php'); ?>
 	<link rel="stylesheet" href="css/contacts.css">
+    
 </head>
 
 <body>

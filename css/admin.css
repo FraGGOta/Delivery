@@ -61,19 +61,19 @@
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.link 
+.logout
 {
-    text-decoration: none;
     font-family: 'Montserrat',
         sans-serif;
-    font-size: 16px;
-    font-weight: bold;
+    text-decoration: none;
     text-transform: uppercase;
-    position: relative;
-    left: 39%;
-} 
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
 
-.link:hover 
+.logout:hover 
 {
     color: #2EE59D;
 }
@@ -97,4 +97,9 @@
     display: block;
     width: 250px;
     height: 30px;
+}
+
+.text
+{
+    margin-left: 85px;
 }

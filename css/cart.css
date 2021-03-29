@@ -171,3 +171,27 @@
     width: 172px;
     height: 172px;
 }
+
+.msg 
+{
+    text-transform: uppercase;
+    border: 2px solid #df2443;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: bold;
+    width: 350px;
+    height: 45px;
+    padding-top: 10px;
+    font-size: 12px;
+    margin-top: 40px;
+}
+
+.none 
+{
+    display: none;
+}
+
+.error 
+{
+    border-bottom: 3px solid #df2443;
+}

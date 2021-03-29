@@ -4,7 +4,7 @@ function initPizza()
     (
         "../connect/core.php",
         {
-            "action" : "initPizza"
+            "action": "initPizza"
         },
         showGoods
     );
@@ -74,8 +74,8 @@ function selectGoods()
     (
         "../admin/core.php",
         {
-            "action" : "selectGoods",
-            "gid" : id
+            "action": "selectGoods",
+            "gid": id
         },
         function (data) 
         {
@@ -100,10 +100,11 @@ function deleteGoods()
         (
             "../admin/core.php",
             {
-                "action" : "deleteGoods",
-                "id" : id
+                "action": "deleteGoods",
+                "id": id
             }
         );
+
         alert('Запись удалена');
         clearGoods();
         initPizza();
@@ -122,17 +123,17 @@ function changeCategory()
         {
             clearGoods();
             initPizza();
-        } 
+        }
         else if ($("option:selected", this).attr('data-id') == '2') 
         {
             clearGoods();
             initShaurma();
-        } 
+        }
         else if ($("option:selected", this).attr('data-id') == '3') 
         {
             clearGoods();
             initBurgers();
-        } 
+        }
         else if ($("option:selected", this).attr('data-id') == '4') 
         {
             clearGoods();
@@ -155,40 +156,42 @@ function saveToDb()
 {
     var id = $('#gid').val();
 
-    if (id != "")
+    if (id != "") 
     {
         $.post
         (
             "../admin/core.php",
             {
-                "action" : "updateGoods",
-                "id" : id,
-                "gname" : $('#gname').val(),
-                "gcost" : $('#gcost').val(),
-                "gdescr" : $('#gdescr').val(),
-                "gord" : $('#gord').val(),
-                "gimg" : $('#gimg').val()
+                "action": "updateGoods",
+                "id": id,
+                "gname": $('#gname').val(),
+                "gcost": $('#gcost').val(),
+                "gdescr": $('#gdescr').val(),
+                "gord": $('#gord').val(),
+                "gimg": $('#gimg').val()
             }
         );
+        
         alert('Товар обновлен');
         initPizza;
-    } 
+    }
     else 
     {
         $.post
         (
             "../admin/core.php",
             {
-                "action" : "newGoods",
-                "id" : 0,
-                "gname" : $('#gname').val(),
-                "gcost" : $('#gcost').val(),
-                "gdescr" : $('#gdescr').val(),
-                "gord" : $('#gord').val(),
-                "gimg" : $('#gimg').val(),
+                "action": "newGoods",
+                "id": 0,
+                "gname": $('#gname').val(),
+                "gcost": $('#gcost').val(),
+                "gdescr": $('#gdescr').val(),
+                "gord": $('#gord').val(),
+                "gimg": $('#gimg').val(),
                 "gcategory": $('.category option:selected').attr('data-id'),
             }
         );
+
         alert('Товар добавлен');
         initPizza;
     }

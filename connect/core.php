@@ -1,26 +1,26 @@
 <?php
 
-$action = $_POST['action'];
+    $action = $_POST['action'];
 
-require_once 'function.php';
+    require_once 'function.php';
 
-switch ($action) 
-{
-    case 'connect':
-        connect();
-        break;
-    case 'initPizza':
-        initPizza();
-        break;
-    case 'initShaurma':
-        initShaurma();
-        break;
-    case 'initBurgers':
-        initBurgers();
-        break;
-    case 'initDrinks':
-        initDrinks();
-        break;
-}
+    switch ($action) 
+    {
+        case 'connect':
+            connect();
+            break;
+        case 'initPizza':
+            initPizza();
+            break;
+        case 'initShaurma':
+            initShaurma();
+            break;
+        case 'initBurgers':
+            initBurgers();
+            break;
+        case 'initDrinks':
+            initDrinks();
+            break;
+    }
 
 ?>
