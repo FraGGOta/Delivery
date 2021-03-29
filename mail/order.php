@@ -4,6 +4,10 @@
 
     require_once '../connect/function.php';
 
+    $get_captcha = isset($_SESSION['captcha_code']) ? $_SESSION['captcha_code'] : '';
+    $get_postcaptcha = isset($_POST['captcha']) ? $_POST['captcha'] : '';
+    if ($get_captcha != $get_postcaptcha) die('error');
+
     $order_account = 0;
     if (isset($_SESSION['user'])) 
     {

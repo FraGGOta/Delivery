@@ -124,7 +124,7 @@ function isCheck()
     var address_reg = /[\p{Alpha}\p{M}\p{Nd}\p{Pc}\p{Join_C}]/gu;
 
     if (mail_reg.test(mail) && number_reg.test(number) && name_reg.test(name) && address_reg.test(address)) return true;
-        return false;
+    return false;
 }
 
 function refreshCaptcha() 
@@ -171,7 +171,7 @@ function sendEmail()
                     }
                     else if (response == 'error') 
                     {
-                        $('.msg').removeClass('none').text('Ошибка! Проверьте поля с данными');
+                        $('.msg').removeClass('none').text('Ошибка! Проверьте поля!');
                     }
                     else if (response == 'captcha') 
                     {
