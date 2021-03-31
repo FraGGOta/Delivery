@@ -111,22 +111,6 @@ function isEmpty(object)
     return false;
 }
 
-function isCheck() 
-{
-    var mail = document.getElementById("mail").value;
-    var number = document.getElementById("number").value;
-    var name = document.getElementById("name").value;
-    var address = document.getElementById("address").value;
-
-    var mail_reg = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
-    var number_reg = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/i;
-    var name_reg = /^[a-zA-Zа-яёА-ЯЁ]+$/u;
-    var address_reg = /[\p{Alpha}\p{M}\p{Nd}\p{Pc}\p{Join_C}]/gu;
-
-    if (mail_reg.test(mail) && number_reg.test(number) && name_reg.test(name) && address_reg.test(address)) return true;
-    return false;
-}
-
 function refreshCaptcha() 
 {
     $("img#captcha-image").attr("src", "/captcha.php?r=" + getRandomInt(100000000, 400000000));
@@ -136,21 +120,23 @@ function sendEmail()
 {
     event.preventDefault();
 
+    $(`input`).removeClass('error');
+    $(`textarea`).removeClass('error');
+
     var name = $('#name').val();
     var address = $('#address').val();
     var number = $('#number').val();
     var mail = $('#mail').val();
     var captcha = $('#captcha').val();
 
-    if (isCheck()) 
+    if (isEmpty(cart)) 
     {
-        if (isEmpty(cart)) 
-        {
-            $.ajax
+        $.ajax
             ({
                 method: "POST",
                 url: "/mail/order.php",
-                data: 
+                dataType: "json",
+                data:
                 {
                     "name": name,
                     "address": address,
@@ -159,27 +145,35 @@ function sendEmail()
                     "cart": cart,
                     "captcha": captcha
                 },
-
                 success: function (response) 
                 {
-                        
-                    if (response == 'successfully') 
+                    if (response.status) 
                     {
                         $('.msg').removeClass('none').text('Заказ отправлен');
                         localStorage.clear();
                         document.location.href = '/';
                     }
-                    else if (response == 'error') 
-                    {
-                        $('.msg').removeClass('none').text('Ошибка! Проверьте поля!');
-                    }
-                    else if (response == 'captcha') 
-                    {
-                        $('.msg').removeClass('none').text('Неверный код с капчи');
-                    }
                     else 
                     {
-                        $('.msg').removeClass('none').text('Неизвестная ошибка');
+                        if (response.type === 1) 
+                        {
+                            response.fields.forEach(function (field) 
+                            {
+                                if ($(`input[id="${field}"]`).length > 0) 
+                                {
+                                    $(`input[id="${field}"]`).addClass('error');
+                                }
+                                else 
+                                {
+                                    if ($(`textarea[id="${field}"]`).length > 0) 
+                                    {
+                                        $(`textarea[id="${field}"]`).addClass('error');
+                                    }
+                                }
+                            });
+                        }
+
+                        $('.msg').removeClass('none').text(response.message);
                     }
                 },
                 error: function (request, status, error) 
@@ -187,19 +181,14 @@ function sendEmail()
                     $('.msg').removeClass('none').text('Не удалось выполнить запрос');
                 }
             });
-        }
-        else 
-        {
-            $('.msg').removeClass('none').text('Корзина пуста');
-        }
     }
-    else 
-    {
-        $('.msg').removeClass('none').text('Заполните поля верно');
+    else {
+        $('.msg').removeClass('none').text('Корзина пуста');
     }
 
     refreshCaptcha();
 }
+
 
 $(document).ready(function () 
 {

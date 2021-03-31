@@ -95,7 +95,7 @@
 
                     if (!empty($cart_result)) $cart_result = substr($cart_result, 0, -1);
 
-                    $view_order .= '<span> <b> <font color="red"> &#9658 </font> Заказ: </b> '.$cart_result.'</span><br>';
+                    $view_order .= '<span> <b> <font color="black"> &#9658 </font> Заказ: </b> '.$cart_result.'</span><br>';
         
                     echo $view_order;
                 }
