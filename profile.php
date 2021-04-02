@@ -43,8 +43,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+
     <?php include('head.php'); ?>
     <link rel="stylesheet" href="css/profile.css">
+
 </head>
 
 <body>
@@ -110,7 +112,9 @@
 
     <div class="history"> 
         <a href="auth/logout.php" class="logout">Выход</a>
-    </div>     
+    </div> 
+    
+    
 
 </body>
 </html>

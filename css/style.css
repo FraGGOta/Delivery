@@ -104,3 +104,9 @@ h6
 {
     opacity: 1;
 }
+
+.mini-cart 
+{
+    position: absolute;
+    color: red;
+}

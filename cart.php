@@ -21,7 +21,7 @@
         <div class="row">Телефон
             <div class="row-icon">
                 <i class="data telephone"></i>
-                <input pattern="^\+7\d{3}\d{7}$" value="+7" maxlength="12" id="number" required>
+                <input pattern="^\+7\d{3}\d{7}$" maxlength="12" id="number" placeholder="+79999999999" required>
             </div>
         </div>
         
@@ -59,6 +59,7 @@
 
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/cart.js"></script>
+    <!-- <script src="js/menu.js"></script> -->
     
 </body>
 </html>

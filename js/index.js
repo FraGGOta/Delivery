@@ -77,3 +77,63 @@ function closeForm()
 {
 	document.getElementById("myForm").style.display = "none";
 }
+
+$('.send-email').click(function (e) 
+{
+	e.preventDefault();
+
+	$(`input`).removeClass('error');
+	$(`textarea`).removeClass('error');
+
+	var name = $('#name').val();
+	var report = $('#report').val();
+	var number = $('#number').val();
+	var mail = $('#mail').val();
+
+	$.ajax
+	({
+		method: "POST",
+		url: "/mail/support.php",
+		dataType: "json",
+		data:
+		{
+			"name": name,
+			"report": report,
+			"number": number,
+			"mail": mail,
+
+		},
+		success: function (response) 
+		{
+			if (response.status)
+			{
+				$('.msg').removeClass('none').text('Сообщение отправлено');
+				document.location.href = '/';
+			}
+			else 
+			{
+				if (response.type === 1) 
+				{
+					response.fields.forEach(function (field) {
+						if ($(`input[id="${field}"]`).length > 0) 
+						{
+							$(`input[id="${field}"]`).addClass('error');
+						}
+						else 
+						{
+							if ($(`textarea[id="${field}"]`).length > 0) 
+							{
+								$(`textarea[id="${field}"]`).addClass('error');
+								}
+							}
+						});
+					}
+
+				$('.msg').removeClass('none').text(response.message);
+			}
+		},
+		error: function (request, status, error) {
+			$('.msg').removeClass('none').text('Не удалось выполнить запрос');
+		}
+	});
+});

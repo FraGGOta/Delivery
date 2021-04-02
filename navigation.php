@@ -1,7 +1,9 @@
 <div class="header">
     <div class="container">
         <div class="header-inner">
-        <nav class="nav"><a class="nav-link" href="index.php">Delivery</a></nav>
+            <nav class="nav">
+                <a class="nav-link" href="index.php">Delivery</a>
+            </nav>
             <nav class="nav">
                 <a class="nav-link" href="index.php">ГЛАВНАЯ</a>
                 <a class="nav-link" href="quality.php">КАЧЕСТВО</a>
@@ -15,3 +17,4 @@
         </div>
     </div>
 </div>
+
