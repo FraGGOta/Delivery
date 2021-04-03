@@ -1,6 +1,6 @@
 <?php
 
-    session_start();
+    @session_start();
 
     if (!isset($_SESSION['user'])) 
     {
@@ -110,11 +110,12 @@
 
     </div>
 
-    <div class="history"> 
+    <!-- <div class="history"> 
         <a href="auth/logout.php" class="logout">Выход</a>
-    </div> 
-    
-    
+    </div>  -->
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/menu.js"></script>
 
 </body>
 </html>
