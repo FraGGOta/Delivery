@@ -5,32 +5,45 @@
 ?>
 
 <!DOCTYPE html>
-
-<!DOCTYPE html>
 <html lang="ru">
 
 <head>
 
-	<?php include('head.php'); ?>
+	<?php 
+
+		include('head.php'); 
+
+	?>
+
 	<link rel="stylesheet" href="css/index.css">
 	
 </head>
 
 <body>
 
-	<?php include('navigation.php'); ?>
+	<?php 
+
+		include('navigation.php'); 
+
+	?>
 
 	<div class="intro">
 
 	 	<h3 class="intro-title">Уникальные предложeния, не пропусти!</h3>
+
 		<div class="slider">
+
 			<div class="slide">
+
 				<img src="images/slide_1.png" alt="">
 				<img src="images/slide_2.png" alt="">
 				<img src="images/slide_3.png" alt="">
+
 			</div>
+
 			<button class="right"><</button>
 			<button class="left">></button>
+
 		</div>
 
    	</div> 
@@ -42,6 +55,7 @@
   		<form action="" class="form-container">
 
     		<h2>Опишите Вашу проблему</h2>
+
     		<input type="name" name="name" id="name" placeholder="Имя" required>
     		<input pattern="^\+7\d{3}\d{7}$" maxlength="12" id="number" placeholder="+79999999999" required>
     		<input type="email" name="email" id="mail" placeholder="Почта" required>
@@ -50,6 +64,7 @@
     		<button type="button" class="cancel" onclick="closeForm()">Закрыть</button>
 			
 			<div class="msg none"></div>
+			
   		</form>
 
 	</div>

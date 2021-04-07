@@ -9,14 +9,23 @@
 
 <head>
 
-    <?php include('head.php'); ?>
+    <?php 
+    
+        include('head.php'); 
+    
+    ?>
+
     <link rel="stylesheet" href="css/menu.css">
     
 </head>
 
 <body>
 
-    <?php include('navigation.php'); ?>
+    <?php 
+
+        include('navigation.php'); 
+        
+    ?>
 
     <div class="container-menu">
 

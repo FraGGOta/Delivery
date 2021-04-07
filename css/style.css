@@ -1,5 +1,5 @@
 body
- {
+{
     margin: 0;
     font-family: 'Montserrat', 
         sans-serif;
@@ -111,17 +111,20 @@ h6
     color: red;
 }
 
-.dropdown {
+.dropdown 
+{
     position: relative;
     display: inline-block;
 }
 
-.dropbtn {
+.dropbtn 
+{
     color: rgb(0, 0, 0);
     font-size: 20px;
 }
 
-.dropdown-content {
+.dropdown-content 
+{
     display: none;
     position: absolute;
     

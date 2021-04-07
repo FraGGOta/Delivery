@@ -16,6 +16,7 @@
         {
             echo "error";
         }
+
         mysqli_close($db);
     }
 
@@ -39,6 +40,7 @@
         {
             echo "error" . mysqli_error($db);
         }
+
         mysqli_close($db);
     }
 
@@ -62,6 +64,7 @@
         {
             echo "error" . mysqli_error($db);
         }
+
         mysqli_close($db);
     }
 
@@ -80,6 +83,7 @@
         {
             echo "error" . mysqli_error($db);
         }
+        
         mysqli_close($db);
     }
 

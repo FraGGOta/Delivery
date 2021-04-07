@@ -114,7 +114,8 @@ $('.send-email').click(function (e)
 			{
 				if (response.type === 1) 
 				{
-					response.fields.forEach(function (field) {
+					response.fields.forEach(function (field) 
+					{
 						if ($(`input[id="${field}"]`).length > 0) 
 						{
 							$(`input[id="${field}"]`).addClass('error');
@@ -124,15 +125,16 @@ $('.send-email').click(function (e)
 							if ($(`textarea[id="${field}"]`).length > 0) 
 							{
 								$(`textarea[id="${field}"]`).addClass('error');
-								}
 							}
-						});
-					}
+						}
+					});
+				}
 
 				$('.msg').removeClass('none').text(response.message);
 			}
 		},
-		error: function (request, status, error) {
+		error: function (request, status, error) 
+		{
 			$('.msg').removeClass('none').text('Не удалось выполнить запрос');
 		}
 	});

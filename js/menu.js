@@ -172,7 +172,8 @@ function addCart()
         ({
             'width': 0,
             'height': 0
-        }, function () {
+        }, function () 
+        {
             $(this).detach()
         });
     }

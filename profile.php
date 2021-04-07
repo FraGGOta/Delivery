@@ -44,24 +44,37 @@
 <html lang="ru">
 <head>
 
-    <?php include('head.php'); ?>
+    <?php 
+
+        include('head.php'); 
+
+    ?>
+
     <link rel="stylesheet" href="css/profile.css">
 
 </head>
 
 <body>
 
-    <?php include('navigation.php'); ?>
+    <?php 
+
+        include('navigation.php'); 
+
+    ?>
 
     <form class="data">
+
         <?= $_SESSION['user']['name'] ?>
         <br>
         <?= $_SESSION['user']['email'] ?>
         <br>
+
     </form>
 
     <div class="name"> 
+
         <h3 class="title">История заказов</h3>
+
     </div>
 
     <div class="history">
@@ -106,13 +119,10 @@
             {
                 echo $orders_empty;
             }
+            
         ?>
 
     </div>
-
-    <!-- <div class="history"> 
-        <a href="auth/logout.php" class="logout">Выход</a>
-    </div>  -->
 
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/menu.js"></script>
