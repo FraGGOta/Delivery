@@ -57,9 +57,10 @@
     		<h2>Опишите Вашу проблему</h2>
 
     		<input type="name" name="name" id="name" placeholder="Имя" required>
-    		<input pattern="^\+7\d{3}\d{7}$" maxlength="12" id="number" placeholder="+79999999999" required>
+    		<input maxlength="12" id="number" placeholder="+7XXXXXXXXXX" required>
     		<input type="email" name="email" id="mail" placeholder="Почта" required>
-			<textarea rows="5" id="report" placeholder="Сообщение"  required></textarea>
+			<textarea rows="5" id="report" placeholder="Сообщение" required></textarea>
+			
     		<button type="submit" class="send-email">Отправить</button>
     		<button type="button" class="cancel" onclick="closeForm()">Закрыть</button>
 			

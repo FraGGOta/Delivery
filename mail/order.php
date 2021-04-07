@@ -17,7 +17,7 @@
     $get_captcha = isset($_SESSION['captcha_code']) ? $_SESSION['captcha_code'] : '';
     if ($get_captcha != $get_postcaptcha) $error_fields[] = 'captcha';
 
-    $reg_exp = array("options" => array("regexp"=>"/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/i"));
+    $reg_exp = array("options" => array("regexp"=>"/^\+7\d{3}\d{7}$/i"));
 
     if (empty($post_name)) $error_fields[] = 'name';
     if (empty($post_number) || !filter_var($post_number, FILTER_VALIDATE_REGEXP, $reg_exp)) $error_fields[] = 'number';

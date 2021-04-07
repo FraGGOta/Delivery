@@ -40,7 +40,7 @@
             <div class="row-icon">
 
                 <i class="data telephone"></i>
-                <input pattern="^\+7\d{3}\d{7}$" maxlength="12" id="number" placeholder="+79999999999" required>
+                <input maxlength="12" id="number" placeholder="+7XXXXXXXXXX" required>
 
             </div>
 
