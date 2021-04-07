@@ -17,6 +17,7 @@
     font-size: 18px;
     width: 100%;
     line-height: 40px;
+    resize: none;
 }
 
 .row-icon input 

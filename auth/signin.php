@@ -60,7 +60,7 @@
     {
         $response = [
             "status" => false,
-            "message" => 'Не верный логин или пароль'
+            "message" => 'Неверный логин или пароль'
         ];
 
         echo json_encode($response);
