@@ -53,7 +53,13 @@
 
         <button type="submit" class="login-btn">Войти</button>
 
-        <a class="jump-auth" href="/register.php">Зарегистрироваться</a>
+        <div class="jump">
+
+            <a class="jump-auth" href="/register.php">Зарегистрироваться</a>
+
+            <a class="jump-newpass" href="/recovery.php">Забыли пароль?</a>
+
+        </div>
 
         <div class="msg none"></div>
 

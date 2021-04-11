@@ -1,105 +1,69 @@
-.shape 
+.air-admin
 {
+    font-size: 20px;
+    max-width: 350px;
     position: absolute;
-    left: 43%;
-    top: 20%;
-}
-
-.signin input 
-{
-    position: relative;
-    display: block;
-    width: 250px;
-    height: 50px;
-    top: -2px;
-    padding: 0 0 0 20px;
-    font-size: 16px;
+    top: 55%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
     font-family: 'Montserrat',
         sans-serif;
-}
-
-.signin textarea 
-{
-    position: relative;
-    display: block;
-    width: 250px;
-    height: 150px;
-    top: -2px;
-    padding: 18px;
-    font-size: 16px;
-    font-family: 'Montserrat',
-        sans-serif;
-}
-
-.signin button 
-{
-    position: relative;
-    display: block;
-    width: 250px;
-    height: 50px;
-    font-family: 'Montserrat',
-        sans-serif;
-    font-size: 16px;
-    font-weight: bold;
     text-transform: uppercase;
-    text-decoration: none;
-    color: #524f4e;
-    outline: 0;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    letter-spacing: 3px;
+    font-weight: bold;
 }
 
-.signin button:hover 
+.row input, textarea 
+{
+    font-family: 'Montserrat',
+        sans-serif;
+    font-size: 18px;
+    width: 100%;
+    line-height: 40px;
+    resize: none;
+    padding-top: 1px;
+}
+
+.add-to-db, .delete-from-db
+{
+    width: 100%;
+    line-height: 50px;
+    text-decoration: none;
+    font-family: 'Montserrat',
+        sans-serif;
+    text-transform: uppercase;
+    overflow: hidden;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #524f4e;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .3s;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.add-to-db:hover, .delete-from-db:hover
 {
     background: #2EE59D;
     color: white;
 }
 
-.signin button:active 
+.add-to-db:active, .delete-from-db:active
 {
     transform: translateY(-10px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.logout
-{
-    font-family: 'Montserrat',
-        sans-serif;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    color: rgb(0, 0, 0);
-}
-
-.logout:hover 
-{
-    color: #2EE59D;
-}
-
-.points 
-{
-    font-size: 16px;
-    font-family: 'Montserrat',
-        sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
 .form-control 
 {
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Montserrat',
         sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     display: block;
-    width: 250px;
-    height: 30px;
-}
-
-.text
-{
-    margin-left: 85px;
+    width: 350px;
+    height: 40px;
 }

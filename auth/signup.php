@@ -72,8 +72,9 @@
     if ($password === $password_confirm) 
     {
         $password = md5($password);
+        $hash = md5($login . time());
 
-        mysqli_query($conn, "INSERT INTO `users` (`id`, `name`, `login`, `email`, `password`, `type`) VALUES (NULL, '$name', '$login', '$email', '$password', 'user')");
+        mysqli_query($conn, "INSERT INTO `users` (`id`, `name`, `login`, `email`, `password`, `hash`, `type`) VALUES (NULL, '$name', '$login', '$email', '$password', '$hash', 'user')");
 
         $response = [
             "status" => true,

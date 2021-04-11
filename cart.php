@@ -27,7 +27,7 @@
         
     ?>
 
-    <form action="" class="air">
+    <form class="air-cart">
 
         <div class="row">Имя
 
@@ -77,6 +77,7 @@
         </div>
 
         <i class="data send"></i>
+        
         <button type="submit" class="send-email">Заказать</button>
         
         <div class="msg none"></div>

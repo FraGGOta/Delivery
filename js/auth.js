@@ -93,3 +93,35 @@ $('.register-btn').click(function (e)
         }
     });
 });
+
+$('.recovery-btn').click(function (e) 
+{
+    e.preventDefault();
+
+    $(`input`).removeClass('error');
+
+    let email = $('input[name="email"]').val();
+        
+    $.ajax
+    ({
+        url: 'auth/restore.php',
+        type: 'POST',
+        dataType: 'json',
+        data:
+        {
+            email: email,
+        },
+        success(data) 
+        {
+            if (data.type === 1) 
+            {
+                data.fields.forEach(function (field) 
+                {
+                    $(`input[name="${field}"]`).addClass('error');
+                });
+            }
+
+            $('.msg').removeClass('none').text(data.message);
+        }
+    });
+});

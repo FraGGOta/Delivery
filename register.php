@@ -70,9 +70,13 @@
             
         </div>
 
-        <button type="submit" class="register-btn">Зарегистрироваться</button>
+        <div class="jump">
 
-        <a class="jump-reg" href="/auth.php">Авторизоваться</a>
+            <button type="submit" class="register-btn">Зарегистрироваться</button>
+
+            <a class="jump-reg" href="/auth.php">Авторизоваться</a>
+
+        </div>
 
         <div class="msg none"></div>
 

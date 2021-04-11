@@ -45,72 +45,68 @@
 
     ?>
 
-    <div class="shape">
-        
-        <form class="signin">
+    <form class="air-admin">
 
-            <div class="points"> Выберите категорию: </div>
+        <div class="row">Выберите категорию </div>
 
-            <div class="category-body">
+        <div class="category-body">
 
-                <select class="form-control category">
+            <select class="form-control category">
 
-                    <option data-id="1">Пицца</option>
-                    <option data-id="2">Шаурма</option>
-                    <option data-id="3">Бургеры</option>
-                    <option data-id="4">Напитки</option>
+                <option data-id="1">Пицца</option>
+                <option data-id="2">Шаурма</option>
+                <option data-id="3">Бургеры</option>
+                <option data-id="4">Напитки</option>
 
-                </select>
+            </select>
 
-            </div>
+        </div>
 
-            <div class="points"> Выберите товар: </div>
+        <div class="row">Выберите товар </div>
             
-            <div class="out-goods">
+        <div class="out-goods">
 
-                <select class="form-control item"></select>
+            <select class="form-control item"></select>
 
-            </div>
+        </div>
 
-            <div class="points"> Название:
+        <div class="row">Название
 
-                <input type="text" id="gname">
+            <input type="text" id="gname">
 
-            </div>   
+        </div>   
             
-            <div class="points"> Цена: 
+        <div class="row">Цена 
 
-                <input type="text" id="gcost">
+            <input type="text" id="gcost">
 
-            </div> 
+        </div> 
 
-            <div class="points"> Описание: 
+        <div class="row">Описание 
 
-                <textarea id="gdescr"></textarea>
+            <textarea id="gdescr"></textarea>
 
-            </div> 
+        </div> 
 
-            <div class="points"> Картинка: 
+        <div class="row">Картинка 
 
-                <input type="text" id="gimg">
+            <input type="text" id="gimg">
 
-            </div> 
+        </div> 
 
-            <div class="points"> Порядок: 
+        <div class="row">Порядок
 
-                <input type="text" id="gord">
+            <input type="text" id="gord">
 
-            </div> 
+        </div> 
 
-            <input type="hidden" id="gid">
+        <input type="hidden" id="gid">
 
-            <button class="add-to-db">Обновить/Добавить</button>
-            <button class="delete-from-db">Удалить</button>
+        <button class="add-to-db">Обновить/Добавить</button>
+        <button class="delete-from-db">Удалить</button>
 
-        </form>
+    </form>
         
-    </div>
-
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/admin.js"></script>
     <script src="js/menu.js"></script>
