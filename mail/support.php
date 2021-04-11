@@ -39,7 +39,7 @@
     $message .= '<b>Почта: </b>' . $post_mail . '<br>';
     $message .= '<b>Сообщение: </b>' . $post_report . '</p>';
 
-    if (mail($to, $subject,  $message, $headers)) 
+    if (mail($to, $subject, $message, $headers)) 
     {
         $response = [
             "status" => true

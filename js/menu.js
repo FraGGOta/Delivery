@@ -160,14 +160,6 @@ function addCart()
                 'height': 75
             }, 1000, 'easeInOutExpo');
 
-        setTimeout(function () 
-        {
-            card_animation.effect("shake",
-                {
-                    times: 2
-                }, 200);
-        }, 1500);
-
         imgclone.animate
         ({
             'width': 0,

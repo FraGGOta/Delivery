@@ -5,7 +5,7 @@
     $width = 110;  
     $height = 50;  
     $font_size = 18;  
-    $let_amount = 4;  
+    $let_amount = 3;  
     $fon_let_amount = 5;  
     $path_fonts = dirname(__FILE__).'/fonts/'; 
  
@@ -44,7 +44,7 @@
         $font = $path_fonts.$fonts[rand(0, sizeof($fonts) - 1)];
         $letter = $letters[rand(0, sizeof($letters) - 1)];
         $size = rand($font_size * 2.1 - 2, $font_size * 2.1 + 2);
-        $x = ($i + 0.2) * $font_size + rand(4, 7);
+        $x = ($i + 1) * $font_size + rand(4, 7);
         $y = (($height * 2) / 3) + rand(0, 5);
         $cod[] = $letter;   
         imagettftext($src, $size, rand(0, 15), $x, $y, $color, $font, $letter);

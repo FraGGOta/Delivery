@@ -27,12 +27,14 @@
     }
 
     $error_fields = [];
+    
+    $reg_exp = array("options" => array("regexp"=>"/^[a-z0-9_-]{3,16}$/i"));
 
-    if ($login === '') 
+    if ($login === '' || !filter_var($login, FILTER_VALIDATE_REGEXP, $reg_exp)) 
     {
         $error_fields[] = 'login';
     }
-
+   
     if ($password === '') 
     {
         $error_fields[] = 'password';
@@ -78,8 +80,6 @@
             "message" => "Регистрация прошла успешно!",
         ];
         echo json_encode($response);
-
-
     } 
     else 
     {

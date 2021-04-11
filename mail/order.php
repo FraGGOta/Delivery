@@ -3,6 +3,8 @@
     @session_start();
 
     require_once '../connect/function.php';
+
+    $conn = connect();
     
     $get_postcaptcha = isset($_POST['captcha']) ? $_POST['captcha'] : '';
 
@@ -45,14 +47,12 @@
         $order_account = intval($_SESSION['user']['id']);
     }
 
-    $db = connect();
-    $sql = "SELECT * FROM goods";
-    $result = mysqli_query($db, $sql);
-
-    if (mysqli_num_rows($result) > 0) 
+    $order = mysqli_query($conn, "SELECT * FROM `goods`");
+    
+    if (mysqli_num_rows($order) > 0) 
     {
         $goods = array();
-        while ($row = mysqli_fetch_assoc($result)) 
+        while ($row = mysqli_fetch_assoc($order)) 
         {
             $goods[$row["id"]] = $row;
         }
@@ -90,9 +90,9 @@
     $message .= '<b>Итого: </b>' . $total . ' руб ';
     $cart_todb_full = json_encode($cart_todb);
 
-    if (mail($to, $subject,  $message, $headers)) 
+    if (mail($to, $subject, $message, $headers)) 
     {
-        if ($order_account > 0) mysqli_query($db, "INSERT INTO `orders` (`account_id`, `cart`) VALUES ('".mysqli_real_escape_string($db, $order_account)."', '".mysqli_real_escape_string($db, $cart_todb_full)."')");
+        if ($order_account > 0) mysqli_query($conn, "INSERT INTO `orders` (`account_id`, `cart`) VALUES ('".mysqli_real_escape_string($conn, $order_account)."', '".mysqli_real_escape_string($conn, $cart_todb_full)."')");
         $response = [
             "status" => true
         ];
