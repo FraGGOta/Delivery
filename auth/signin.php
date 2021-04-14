@@ -7,6 +7,7 @@
 
     $login = $_POST['login'];
     $password = $_POST['password'];
+    $email_confirmed = $_POST['email_confirmed'];
 
     $error_fields = [];
 
@@ -40,21 +41,35 @@
 
     if (mysqli_num_rows($check_user) > 0) 
     {
-        $user = mysqli_fetch_assoc($check_user);
+        $check_email = mysqli_query($conn, "SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$password' AND `email_confirmed` = 1");
 
-        $_SESSION['user'] = [
-            "id" => $user['id'],
-            "name" => $user['name'],
-            "email" => $user['email'],
-            "type" => $user['type']
-        ];
+        if (mysqli_num_rows($check_email) > 0)
+        {
+            $user = mysqli_fetch_assoc($check_user);
 
-        $response = [
-            "status" => true,
-            "type" => $user['type']
-        ];
+            $_SESSION['user'] = [
+                "id" => $user['id'],
+                "name" => $user['name'],
+                "email" => $user['email'],
+                "type" => $user['type']
+            ];
 
-        echo json_encode($response);
+            $response = [
+                "status" => true,
+                "type" => $user['type']
+            ];
+
+            echo json_encode($response);
+        }
+        else 
+        {
+            $response = [
+                "status" => false,
+                "message" => 'Подтвердите свой Email!'
+            ];
+
+            echo json_encode($response);
+        }
     } 
     else 
     {

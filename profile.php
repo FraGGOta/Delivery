@@ -12,12 +12,12 @@
         header('Location: /admin.php');
     }
 
-    require_once('connect/function.php');
+    require_once 'connect/function.php';
 
-    $db = connect();
+    $conn = connect();
     $goods = array();
 
-    $goods_query = mysqli_query($db, "SELECT * FROM `goods`");
+    $goods_query = mysqli_query($conn, "SELECT * FROM `goods`");
 
     if (mysqli_num_rows($goods_query) > 0) 
     {
@@ -29,7 +29,7 @@
 
     $categories = array();
 
-    $categories_query = mysqli_query($db, "SELECT * FROM `categories`");
+    $categories_query = mysqli_query($conn, "SELECT * FROM `categories`");
 
     if (mysqli_num_rows($categories_query) > 0) 
     {
@@ -82,7 +82,7 @@
         <?php
 
             $orders_empty = '<div> Вы ещё ничего не заказывали! </div>';
-            $get_orders = mysqli_query($db, "SELECT * FROM `orders` WHERE `account_id` = '".intval($_SESSION['user']['id'])."'");
+            $get_orders = mysqli_query($conn, "SELECT * FROM `orders` WHERE `account_id` = '".intval($_SESSION['user']['id'])."'");
 
             if (mysqli_num_rows($get_orders) > 0) 
             {

@@ -3,8 +3,7 @@
     function allGoods()
     {
         $conn = connect();
-        $sql = "SELECT *  FROM goods ";
-        $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($conn, "SELECT * FROM goods");
 
         if (mysqli_num_rows($result) > 0) 
         {
@@ -25,9 +24,8 @@
 
     function loadPizza()
     {
-        $db = connect();
-        $sql = "SELECT *  FROM goods WHERE id_category = '1' ";
-        $result = mysqli_query($db, $sql);
+        $conn = connect();
+        $result = mysqli_query($conn, "SELECT * FROM goods WHERE id_category = '1'");
 
         if (mysqli_num_rows($result) > 0) 
         {
@@ -43,14 +41,13 @@
             echo "error";
         }
 
-        mysqli_close($db);
+        mysqli_close($conn);
     }
 
     function loadShaurma()
     {
         $conn = connect();
-        $sql = "SELECT *  FROM goods WHERE id_category = '2' ";
-        $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($conn, "SELECT * FROM goods WHERE id_category = '2'");
 
         if (mysqli_num_rows($result) > 0) 
         {
@@ -72,8 +69,7 @@
     function loadBurgers()
     {
         $conn = connect();
-        $sql = "SELECT *  FROM goods WHERE id_category = '3' ";
-        $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($conn, "SELECT * FROM goods WHERE id_category = '3'");
 
         if (mysqli_num_rows($result) > 0) 
         {
@@ -95,8 +91,7 @@
     function loadDrinks()
     {
         $conn = connect();
-        $sql = "SELECT *  FROM goods WHERE id_category = '4' ";
-        $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($conn, "SELECT * FROM goods WHERE id_category = '4'");
 
         if (mysqli_num_rows($result) > 0) 
         {

@@ -38,49 +38,63 @@
     
     ?>
 
-    <form class="air-reg">
+    <div class="air">
 
-        <div class="row">Имя
+        <form class="air-reg">
 
-            <input type="text" name="name">
+            <div class="row">Имя
 
-        </div>
+                <input type="text" name="name">
 
-        <div class="row">Логин
+            </div>
 
-            <input type="text" name="login">
+            <div class="row">Логин
 
-        </div>
+                <input type="text" name="login">
 
-        <div class="row">Почта
+            </div>
 
-            <input type="email" name="email">
+            <div class="row">Почта
 
-        </div>
+                <input type="email" name="email">
 
-        <div class="row">Пароль
+            </div>
 
-            <input type="password" name="password">
+            <div class="row">Пароль
 
-        </div>
+                <input type="password" name="password">
 
-        <div class="row">Подтвердите пароль
+            </div>
 
-            <input type="password" name="password_confirm">
+            <div class="row">Подтвердите пароль
+
+                <input type="password" name="password_confirm">
+                
+            </div>
+
+            <div class="jump">
+
+                <button type="submit" class="register-btn">Зарегистрироваться</button>
+
+                <a class="jump-reg" href="/auth.php">Авторизоваться</a>
+
+            </div>
+
+            <div class="msg none"></div>
+
+        </form>
+
+        <div class="message">
+
+            После регистрации необходимо  
+            подтвердить Email адрес, 
+            иначе Вы не сможете зайти в  
+            личный кабинет!               
             
-        </div>
-
-        <div class="jump">
-
-            <button type="submit" class="register-btn">Зарегистрироваться</button>
-
-            <a class="jump-reg" href="/auth.php">Авторизоваться</a>
 
         </div>
 
-        <div class="msg none"></div>
-
-    </form>
+    </div>
 
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/auth.js"></script>

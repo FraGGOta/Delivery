@@ -22,7 +22,6 @@
     width: 100%;
     line-height: 40px;
     resize: none;
-    padding-top: 1px;
 }
 
 .add-to-db, .delete-from-db

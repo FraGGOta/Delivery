@@ -110,3 +110,9 @@ h6
     position: absolute;
     color: red;
 }
+
+.logo
+{
+    width: 64px;
+    height: 64px;
+}

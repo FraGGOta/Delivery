@@ -14,15 +14,19 @@
     font-weight: bold;
 }
 
-.air-reg 
+.air 
 {
-    font-size: 20px;
-    max-width: 350px;
     position: absolute;
     top: 55%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+}
+
+.air-reg 
+{
+    font-size: 20px;
+    max-width: 350px;
     font-family: 'Montserrat',
         sans-serif;
     text-transform: uppercase;
@@ -149,5 +153,18 @@
         sans-serif;
     font-size: 14px;
     text-transform: uppercase;
+}
+
+.message
+{
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Montserrat',
+        sans-serif;
+    border: 2px solid #df2443;
+    border-radius: 3px;
+    padding: 12px;
+    max-width: 350px;
 }
 

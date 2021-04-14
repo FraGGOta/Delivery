@@ -2,10 +2,10 @@
 
     function selectGoods() 
     {
-        $db = connect();
+        $conn = connect();
         $id = $_POST['gid'];
-        $sql = "SELECT * FROM goods WHERE id = '$id'";
-        $result = mysqli_query($db, $sql);
+
+        $result = mysqli_query($conn, "SELECT * FROM goods WHERE id = '$id'");
 
         if (mysqli_num_rows($result) > 0) 
         {
@@ -17,12 +17,12 @@
             echo "error";
         }
 
-        mysqli_close($db);
+        mysqli_close($conn);
     }
 
     function updateGoods() 
     {
-        $db = connect();
+        $conn = connect();
         $id = $_POST['id'];
         $name = $_POST['gname'];
         $cost = $_POST['gcost'];
@@ -30,23 +30,21 @@
         $ord =$_POST['gord'];
         $img = $_POST['gimg'];
 
-        $sql = "UPDATE goods SET name = '$name', cost = '$cost', descr = '$descr', ord = '$ord', img = '$img' WHERE id = '$id' ";
-
-        if (mysqli_query($db, $sql)) 
+        if (mysqli_query($conn, "UPDATE goods SET name = '$name', cost = '$cost', descr = '$descr', ord = '$ord', img = '$img' WHERE id = '$id'")) 
         {
             echo "successfully";
         } 
         else 
         {
-            echo "error" . mysqli_error($db);
+            echo "error" . mysqli_error($conn);
         }
 
-        mysqli_close($db);
+        mysqli_close($conn);
     }
 
     function newGoods()
     {
-        $db = connect();
+        $conn = connect();
         $name = $_POST['gname'];
         $cost = $_POST['gcost'];
         $descr = $_POST['gdescr'];
@@ -54,37 +52,33 @@
         $img = $_POST['gimg'];
         $id_category = $_POST['gcategory'];
 
-        $sql = "INSERT INTO goods (name, id_category, cost, descr, ord, img) VALUES ('$name', '$id_category', '$cost', '$descr', '$ord', '$img')";
-
-        if (mysqli_query($db, $sql)) 
+        if (mysqli_query($conn, "INSERT INTO goods (name, id_category, cost, descr, ord, img) VALUES ('$name', '$id_category', '$cost', '$descr', '$ord', '$img')")) 
         {
             echo "successfully";
         } 
         else 
         {
-            echo "error" . mysqli_error($db);
+            echo "error" . mysqli_error($conn);
         }
 
-        mysqli_close($db);
+        mysqli_close($conn);
     }
 
     function deleteGoods()
     {
-        $db = connect();
+        $conn = connect();
         $id = $_POST['id'];
 
-        $sql = "DELETE FROM goods WHERE id = '$id' ";
-
-        if (mysqli_query($db, $sql)) 
+        if (mysqli_query($conn, "DELETE FROM goods WHERE id = '$id'")) 
         {
             echo "successfully";
         } 
         else 
         {
-            echo "error" . mysqli_error($db);
+            echo "error" . mysqli_error($conn);
         }
         
-        mysqli_close($db);
+        mysqli_close($conn);
     }
 
 ?>

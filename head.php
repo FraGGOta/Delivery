@@ -5,5 +5,5 @@
 
 <title>Delivery</title>
 
-<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="icon" type="image/png" href="images/logo1.png">
 <link rel="stylesheet" href="css/style.css">
