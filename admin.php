@@ -34,6 +34,7 @@
     ?>
 
     <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/auth.css">
 
 </head>
 
@@ -104,6 +105,8 @@
 
         <button class="add-to-db">Обновить/Добавить</button>
         <button class="delete-from-db">Удалить</button>
+        
+        <div class="msg none"></div>
 
     </form>
         

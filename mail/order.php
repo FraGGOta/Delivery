@@ -73,6 +73,7 @@
     $message .= '<p><b>Заказ:</b></p>';
 
     $cart_todb = array();
+    
     foreach ($post_cart as $id => $count) 
     {
         $message .= $goods[$id]['name'] . ': ';

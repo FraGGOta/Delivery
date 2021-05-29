@@ -9,21 +9,42 @@
     function connect()
     {
         global $host, $user, $pass, $name;
-        $db = mysqli_connect($host, $user, $pass, $name);
+        $dataBased = mysqli_connect($host, $user, $pass, $name);
 
-        if (!$db) 
+        if (!$dataBased) 
         {
             die("connection failed: " . mysqli_connect_error());
         }
 
-        return $db;
+        return $dataBased;
+    }
+
+    function allGoods()
+    {
+        $conn = connect();
+        $result = mysqli_query($conn, "SELECT * FROM goods");
+
+        if (mysqli_num_rows($result) > 0) 
+        {
+            $out = array();
+            while ($row = mysqli_fetch_assoc($result)) 
+            {
+                $out[$row["id"]] = $row;
+            }
+            echo json_encode($out);
+        } 
+        else 
+        {
+            echo "error";
+        }
+
+        mysqli_close($conn);
     }
 
     function initPizza()
     {
         $conn = connect();
-        $sql = "SELECT *  FROM goods WHERE id_category = '1' ";
-        $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($conn, "SELECT * FROM goods WHERE id_category = '1'");
 
         if (mysqli_num_rows($result) > 0) 
         {
@@ -45,8 +66,7 @@
     function initShaurma()
     {
         $conn = connect();
-        $sql = "SELECT *  FROM goods WHERE id_category = '2' ";
-        $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($conn, "SELECT * FROM goods WHERE id_category = '2'");
 
         if (mysqli_num_rows($result) > 0) 
         {
@@ -68,8 +88,7 @@
     function initBurgers()
     {
         $conn = connect();
-        $sql = "SELECT *  FROM goods WHERE id_category = '3' ";
-        $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($conn, "SELECT * FROM goods WHERE id_category = '3'");
 
         if (mysqli_num_rows($result) > 0) 
         {
@@ -91,8 +110,7 @@
     function initDrinks()
     {
         $conn = connect();
-        $sql = "SELECT *  FROM goods WHERE id_category = '4' ";
-        $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($conn, "SELECT * FROM goods WHERE id_category = '4'");
 
         if (mysqli_num_rows($result) > 0) 
         {

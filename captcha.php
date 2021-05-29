@@ -2,19 +2,23 @@
 
     @session_start();
 
-    $width = 110;  
-    $height = 50;  
-    $font_size = 18;  
-    $let_amount = 3;  
-    $fon_let_amount = 5;  
-    $path_fonts = dirname(__FILE__).'/fonts/'; 
+    $width = 110;  // ширина
+    $height = 50;  // высота
+    $font_size = 18;  // размер шрифта
+    $let_amount = 3;  // количество символов в нашей капче
+    $fon_let_amount = 5;  // количество знаков, составляющих фон
+    $path_fonts = dirname(__FILE__).'/fonts/';  // указываем путь к папке, где у нас лежат шрифты
  
+
+    /* набираем алфавит, из которого будем генерировать случайным
+    образом текст на нашей картинке. */
     $letters = array('1','2','3','4','5','6','7','9','a','b','c','d','e','f','g','h','i','j','k','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
     shuffle($letters); 
-    $colors = array('10','30','50','70','90');
-    $src = imagecreatetruecolor($width, $height);
-    $fon = imagecolorallocate($src, 255, 255, 255);
-    imagefill($src, 0, 0, $fon);
+    
+    $colors = array('10','30','50','70','90'); // гамма, из которой генерируется цвет буквы
+    $src = imagecreatetruecolor($width, $height); // создаем холст
+    $fon = imagecolorallocate($src, 255, 255, 255); // генерируем белый цвет
+    imagefill($src, 0, 0, $fon); // заполняем им холст
  
     $fonts = array();
     $dir = opendir($path_fonts);
@@ -29,7 +33,7 @@
 
     closedir($dir);
  
-    for($i = 0; $i < $fon_let_amount; $i++) 
+    for($i = 0; $i < $fon_let_amount; $i++)  // генерируем фон
     {
         $color = imagecolorallocatealpha($src, rand(0, 255), rand(0, 255), rand(0, 255), 100); 
         $font = $path_fonts.$fonts[rand(0, sizeof($fonts) - 1)];
@@ -40,19 +44,28 @@
  
     for($i = 0; $i < $let_amount; $i++) 
     {
+        // определяем цвет буквы случайным образом
         $color = imagecolorallocatealpha($src, $colors[rand(0, sizeof($colors) - 1)], $colors[rand(0, sizeof($colors) - 1)], $colors[rand(0, sizeof($colors) - 1)], rand(20, 40)); 
         $font = $path_fonts.$fonts[rand(0, sizeof($fonts) - 1)];
+
+        // выбираем случайным образом букву
         $letter = $letters[rand(0, sizeof($letters) - 1)];
+
+        // делаем буквы чуточку разными по размеру
         $size = rand($font_size * 2.1 - 2, $font_size * 2.1 + 2);
+
+        // сдвиг буквы по горизонтали
         $x = ($i + 1) * $font_size + rand(4, 7);
+        // генерируем сдвиг по вертикали
         $y = (($height * 2) / 3) + rand(0, 5);
         $cod[] = $letter;   
+        // печатаем букву с фоном
         imagettftext($src, $size, rand(0, 15), $x, $y, $color, $font, $letter);
     }
 
     $_SESSION['captcha_code'] = implode('', $cod);
 
     header ("Content-type: image/gif"); 
-    imagegif($src);
+    imagegif($src); // выводим картинку
 
 ?> 

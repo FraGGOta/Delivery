@@ -104,14 +104,13 @@ function deleteGoods()
                 "id": id
             }
         );
-
-        alert('Запись удалена');
+        $('.msg').removeClass('none').text('Запись удалена');
         clearGoods();
         initPizza();
     }
     else 
     {
-        alert('Ошибка');
+        $('.msg').removeClass('none').text('Ошибка');
     }
 }
 
@@ -171,8 +170,7 @@ function saveToDb()
                 "gimg": $('#gimg').val()
             }
         );
-        
-        alert('Товар обновлен');
+        $('.msg').removeClass('none').text('Товар обновлен');
         initPizza;
     }
     else 
@@ -192,7 +190,7 @@ function saveToDb()
             }
         );
 
-        alert('Товар добавлен');
+        $('.msg').removeClass('none').text('Товар добавлен');
         initPizza;
     }
 }

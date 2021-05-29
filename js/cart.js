@@ -29,7 +29,7 @@ function showCart()
     {
         $.post
         (
-            "dataBase/core.php",
+            "connect/core.php",
             {
                 "action": "allGoods"
             },

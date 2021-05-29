@@ -4,36 +4,36 @@ function init()
 {
     $.post
     (
-        "dataBase/core.php",
+        "connect/core.php",
         {
-            "action": "loadPizza"
+            "action": "initPizza"
         },
         outPizza
     );
 
     $.post
     (
-        "dataBase/core.php",
+        "connect/core.php",
         {
-            "action": "loadShaurma"
+            "action": "initShaurma"
         },
         outShaurma
     );
 
     $.post
     (
-        "dataBase/core.php",
+        "connect/core.php",
         {
-            "action": "loadBurgers"
+            "action": "initBurgers"
         },
         outBurgers
     );
 
     $.post
     (
-        "dataBase/core.php",
+        "connect/core.php",
         {
-            "action": "loadDrinks"
+            "action": "initDrinks"
         },
         outDrinks
     );

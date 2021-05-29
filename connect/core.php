@@ -9,6 +9,9 @@
         case 'connect':
             connect();
             break;
+        case 'allGoods':
+            allGoods();
+            break;
         case 'initPizza':
             initPizza();
             break;
