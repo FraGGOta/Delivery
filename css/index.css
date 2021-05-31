@@ -123,6 +123,7 @@
     bottom: 23px;
     right: 28px;
     width: 280px;
+    border-radius: 15px;
 }
 
 .form-container .send-email:hover, .open-button:hover 
@@ -149,7 +150,6 @@
     position: fixed;
     bottom: 0;
     right: 15px;
-   
     z-index: 9;  
     font-weight: bold;
 }
@@ -169,6 +169,8 @@
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
+    border-radius: 15px;
+    outline: none;
 }
 
 .form-container .send-email 
@@ -188,6 +190,7 @@
     border: 1px solid;
     text-decoration: none;
     cursor: pointer;
+    border-radius: 15px;
 }
 
 .form-container .cancel
@@ -207,6 +210,7 @@
     border: 1px solid;
     text-decoration: none;
     cursor: pointer;
+    border-radius: 15px;
 }
 
 .msg 
@@ -221,6 +225,7 @@
     padding-top: 10px;
     font-size: 12px;
     margin-top: 5px;
+    border-radius: 15px;
 }
 
 .none 

@@ -51,7 +51,7 @@
             
         </div>
 
-        <button type="submit" class="login-btn">Войти</button>
+        <button class="login-btn">Войти</button>
 
         <div class="jump">
 
@@ -66,6 +66,7 @@
     </form>
 
     <script src="js/jquery-3.5.1.min.js"></script>
+    <script src='js/jquery-ui.min.js'></script>
     <script src="js/auth.js"></script>
     <script src="js/menu.js"></script>
 

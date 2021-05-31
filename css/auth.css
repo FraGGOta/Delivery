@@ -57,13 +57,18 @@
     font-size: 18px;
     width: 100%;
     line-height: 40px;
+    margin-top: 5px;
+    outline: none;
+    border-radius: 15px;
 }
 
 .login-btn, .register-btn, .recovery-btn
 {
     width: 100%;
-    line-height: 50px;
+    height: 55px;
     text-decoration: none;
+    position: relative;
+    border: 1px solid;
     font-family: 'Montserrat',
         sans-serif;
     text-transform: uppercase;
@@ -71,21 +76,22 @@
     letter-spacing: 2px;
     font-size: 14px;
     font-weight: bold;
-    color: #524f4e;
+    color: #524f4e; 
     box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
     transition: .3s;
     cursor: pointer;
     margin-top: 10px;
     margin-bottom: 40px;
+    border-radius: 15px;
 }
 
 .login-btn:hover, .register-btn:hover, .recovery-btn:hover
 {
     background: #2EE59D;
-    color: white;
+    color: white; 
 }
 
-.login-btn:active, .register-btn:active, .recovery-btn:active
+.login-btn:active
 {
     transform: translateY(-10px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -105,6 +111,7 @@
     padding-top: 12px;
     font-size: 12px;
     margin-top: 20px;
+    border-radius: 15px;
 }
 
 .none 
@@ -166,5 +173,6 @@
     border-radius: 3px;
     padding: 12px;
     max-width: 350px;
+    border-radius: 15px;
 }
 

@@ -22,12 +22,15 @@
     width: 100%;
     line-height: 40px;
     resize: none;
+    border-radius: 15px;
+    border: 1px solid;
+    outline: none;
 }
 
 .add-to-db, .delete-from-db
 {
     width: 100%;
-    line-height: 50px;
+    line-height: 55px;
     text-decoration: none;
     font-family: 'Montserrat',
         sans-serif;
@@ -41,6 +44,9 @@
     transition: .3s;
     cursor: pointer;
     margin-top: 10px;
+    margin-top: 10px;
+    border-radius: 15px;
+    border: 1px solid;
 }
 
 .add-to-db:hover, .delete-from-db:hover
@@ -65,4 +71,5 @@
     display: block;
     width: 350px;
     height: 40px;
+    border-radius: 15px;
 }
